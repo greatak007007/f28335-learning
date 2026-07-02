@@ -1,0 +1,52 @@
+[
+   {
+      "directory" : "C:/Users/Administrator/workspace_ccstheia/Example_2833xCpuTimer/Debug",
+      "command"   : "clang++ -I\"C:/ti/ccs2100/ccs/tools/compiler/ti-cgt-c2000_25.11.1.LTS/include\" -I\"C:/ti/C2000Ware_26_01_00_00/device_support/f2833x/headers/include\" -I\"C:/ti/C2000Ware_26_01_00_00/device_support/f2833x/common/include\" -I\"C:/ti/C2000Ware_26_01_00_00/libraries/math/IQmath/c28/include\" -I\"C:/ti/C2000Ware_26_01_00_00/libraries/math/FPUfastRTS/c28/include\" -D_DEBUG -DLARGE_MODEL",
+      "file"      : "C:/ti/C2000Ware_26_01_00_00/device_support/f2833x/common/source/DSP2833x_ADC_cal.asm"
+   },
+   {
+      "directory" : "C:/Users/Administrator/workspace_ccstheia/Example_2833xCpuTimer/Debug",
+      "command"   : "clang++ -I\"C:/ti/ccs2100/ccs/tools/compiler/ti-cgt-c2000_25.11.1.LTS/include\" -I\"C:/ti/C2000Ware_26_01_00_00/device_support/f2833x/headers/include\" -I\"C:/ti/C2000Ware_26_01_00_00/device_support/f2833x/common/include\" -I\"C:/ti/C2000Ware_26_01_00_00/libraries/math/IQmath/c28/include\" -I\"C:/ti/C2000Ware_26_01_00_00/libraries/math/FPUfastRTS/c28/include\" -D_DEBUG -DLARGE_MODEL",
+      "file"      : "C:/ti/C2000Ware_26_01_00_00/device_support/f2833x/common/source/DSP2833x_CodeStartBranch.asm"
+   },
+   {
+      "directory" : "C:/Users/Administrator/workspace_ccstheia/Example_2833xCpuTimer/Debug",
+      "command"   : "clang++ -I\"C:/ti/ccs2100/ccs/tools/compiler/ti-cgt-c2000_25.11.1.LTS/include\" -I\"C:/ti/C2000Ware_26_01_00_00/device_support/f2833x/headers/include\" -I\"C:/ti/C2000Ware_26_01_00_00/device_support/f2833x/common/include\" -I\"C:/ti/C2000Ware_26_01_00_00/libraries/math/IQmath/c28/include\" -I\"C:/ti/C2000Ware_26_01_00_00/libraries/math/FPUfastRTS/c28/include\" -D_DEBUG -DLARGE_MODEL -xc",
+      "file"      : "C:/ti/C2000Ware_26_01_00_00/device_support/f2833x/common/source/DSP2833x_CpuTimers.c"
+   },
+   {
+      "directory" : "C:/Users/Administrator/workspace_ccstheia/Example_2833xCpuTimer/Debug",
+      "command"   : "clang++ -I\"C:/ti/ccs2100/ccs/tools/compiler/ti-cgt-c2000_25.11.1.LTS/include\" -I\"C:/ti/C2000Ware_26_01_00_00/device_support/f2833x/headers/include\" -I\"C:/ti/C2000Ware_26_01_00_00/device_support/f2833x/common/include\" -I\"C:/ti/C2000Ware_26_01_00_00/libraries/math/IQmath/c28/include\" -I\"C:/ti/C2000Ware_26_01_00_00/libraries/math/FPUfastRTS/c28/include\" -D_DEBUG -DLARGE_MODEL -xc",
+      "file"      : "C:/ti/C2000Ware_26_01_00_00/device_support/f2833x/common/source/DSP2833x_DefaultIsr.c"
+   },
+   {
+      "directory" : "C:/Users/Administrator/workspace_ccstheia/Example_2833xCpuTimer/Debug",
+      "command"   : "clang++ -I\"C:/ti/ccs2100/ccs/tools/compiler/ti-cgt-c2000_25.11.1.LTS/include\" -I\"C:/ti/C2000Ware_26_01_00_00/device_support/f2833x/headers/include\" -I\"C:/ti/C2000Ware_26_01_00_00/device_support/f2833x/common/include\" -I\"C:/ti/C2000Ware_26_01_00_00/libraries/math/IQmath/c28/include\" -I\"C:/ti/C2000Ware_26_01_00_00/libraries/math/FPUfastRTS/c28/include\" -D_DEBUG -DLARGE_MODEL -xc",
+      "file"      : "C:/ti/C2000Ware_26_01_00_00/device_support/f2833x/headers/source/DSP2833x_GlobalVariableDefs.c"
+   },
+   {
+      "directory" : "C:/Users/Administrator/workspace_ccstheia/Example_2833xCpuTimer/Debug",
+      "command"   : "clang++ -I\"C:/ti/ccs2100/ccs/tools/compiler/ti-cgt-c2000_25.11.1.LTS/include\" -I\"C:/ti/C2000Ware_26_01_00_00/device_support/f2833x/headers/include\" -I\"C:/ti/C2000Ware_26_01_00_00/device_support/f2833x/common/include\" -I\"C:/ti/C2000Ware_26_01_00_00/libraries/math/IQmath/c28/include\" -I\"C:/ti/C2000Ware_26_01_00_00/libraries/math/FPUfastRTS/c28/include\" -D_DEBUG -DLARGE_MODEL -xc",
+      "file"      : "C:/ti/C2000Ware_26_01_00_00/device_support/f2833x/common/source/DSP2833x_PieCtrl.c"
+   },
+   {
+      "directory" : "C:/Users/Administrator/workspace_ccstheia/Example_2833xCpuTimer/Debug",
+      "command"   : "clang++ -I\"C:/ti/ccs2100/ccs/tools/compiler/ti-cgt-c2000_25.11.1.LTS/include\" -I\"C:/ti/C2000Ware_26_01_00_00/device_support/f2833x/headers/include\" -I\"C:/ti/C2000Ware_26_01_00_00/device_support/f2833x/common/include\" -I\"C:/ti/C2000Ware_26_01_00_00/libraries/math/IQmath/c28/include\" -I\"C:/ti/C2000Ware_26_01_00_00/libraries/math/FPUfastRTS/c28/include\" -D_DEBUG -DLARGE_MODEL -xc",
+      "file"      : "C:/ti/C2000Ware_26_01_00_00/device_support/f2833x/common/source/DSP2833x_PieVect.c"
+   },
+   {
+      "directory" : "C:/Users/Administrator/workspace_ccstheia/Example_2833xCpuTimer/Debug",
+      "command"   : "clang++ -I\"C:/ti/ccs2100/ccs/tools/compiler/ti-cgt-c2000_25.11.1.LTS/include\" -I\"C:/ti/C2000Ware_26_01_00_00/device_support/f2833x/headers/include\" -I\"C:/ti/C2000Ware_26_01_00_00/device_support/f2833x/common/include\" -I\"C:/ti/C2000Ware_26_01_00_00/libraries/math/IQmath/c28/include\" -I\"C:/ti/C2000Ware_26_01_00_00/libraries/math/FPUfastRTS/c28/include\" -D_DEBUG -DLARGE_MODEL -xc",
+      "file"      : "C:/ti/C2000Ware_26_01_00_00/device_support/f2833x/common/source/DSP2833x_SysCtrl.c"
+   },
+   {
+      "directory" : "C:/Users/Administrator/workspace_ccstheia/Example_2833xCpuTimer/Debug",
+      "command"   : "clang++ -I\"C:/ti/ccs2100/ccs/tools/compiler/ti-cgt-c2000_25.11.1.LTS/include\" -I\"C:/ti/C2000Ware_26_01_00_00/device_support/f2833x/headers/include\" -I\"C:/ti/C2000Ware_26_01_00_00/device_support/f2833x/common/include\" -I\"C:/ti/C2000Ware_26_01_00_00/libraries/math/IQmath/c28/include\" -I\"C:/ti/C2000Ware_26_01_00_00/libraries/math/FPUfastRTS/c28/include\" -D_DEBUG -DLARGE_MODEL",
+      "file"      : "C:/ti/C2000Ware_26_01_00_00/device_support/f2833x/common/source/DSP2833x_usDelay.asm"
+   },
+   {
+      "directory" : "C:/Users/Administrator/workspace_ccstheia/Example_2833xCpuTimer/Debug",
+      "command"   : "clang++ -I\"C:/ti/ccs2100/ccs/tools/compiler/ti-cgt-c2000_25.11.1.LTS/include\" -I\"C:/ti/C2000Ware_26_01_00_00/device_support/f2833x/headers/include\" -I\"C:/ti/C2000Ware_26_01_00_00/device_support/f2833x/common/include\" -I\"C:/ti/C2000Ware_26_01_00_00/libraries/math/IQmath/c28/include\" -I\"C:/ti/C2000Ware_26_01_00_00/libraries/math/FPUfastRTS/c28/include\" -D_DEBUG -DLARGE_MODEL -xc",
+      "file"      : "C:/Users/Administrator/workspace_ccstheia/Example_2833xCpuTimer/Example_2833xCpuTimer.c"
+   }
+]
