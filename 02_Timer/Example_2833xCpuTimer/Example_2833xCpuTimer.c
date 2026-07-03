@@ -55,13 +55,15 @@
 // Included Files
 //
 #include "DSP28x_Project.h"     // Device Headerfile and Examples Include File
-
+#include "Gpio.h"
 //
 // Function Prototype statements
 //
 __interrupt void cpu_timer0_isr(void);
 __interrupt void cpu_timer1_isr(void);
 __interrupt void cpu_timer2_isr(void);
+
+volatile Uint16 timer0_flag = 0;
 
 //
 // Main
@@ -133,7 +135,7 @@ void main(void)
     // Configure CPU-Timer 0, 1, and 2 to interrupt every second:
     // 150MHz CPU Freq, 1 second Period (in uSeconds)
     //
-    ConfigCpuTimer(&CpuTimer0, 150, 1000000);
+    ConfigCpuTimer(&CpuTimer0, 150, 500000);
     ConfigCpuTimer(&CpuTimer1, 150, 1000000);
     ConfigCpuTimer(&CpuTimer2, 150, 1000000);
     #endif
@@ -185,7 +187,17 @@ void main(void)
     //
     // Step 6. IDLE loop. Just sit and loop forever (optional):
     //
-    for(;;);
+    Gpio_init();
+
+    LED_Alloff();
+    for(;;)
+    {
+        if(timer0_flag)
+        {
+            timer0_flag = 0;
+            GpioDataRegs.GPCTOGGLE.bit.GPIO67 = 1;
+        }
+    }
 }
 
 //
@@ -194,6 +206,7 @@ void main(void)
 __interrupt void 
 cpu_timer0_isr(void)
 {
+    timer0_flag = 1;
     CpuTimer0.InterruptCount++;
 
     //
