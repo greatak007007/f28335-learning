@@ -63,7 +63,7 @@ __interrupt void cpu_timer0_isr(void);
 __interrupt void cpu_timer1_isr(void);
 __interrupt void cpu_timer2_isr(void);
 
-volatile Uint16 timer0_flag = 0;
+volatile Uint16 timer_1ms = 0;
 
 //
 // Main
@@ -135,7 +135,7 @@ void main(void)
     // Configure CPU-Timer 0, 1, and 2 to interrupt every second:
     // 150MHz CPU Freq, 1 second Period (in uSeconds)
     //
-    ConfigCpuTimer(&CpuTimer0, 150, 500000);
+    ConfigCpuTimer(&CpuTimer0, 150, 1000);
     ConfigCpuTimer(&CpuTimer1, 150, 1000000);
     ConfigCpuTimer(&CpuTimer2, 150, 1000000);
     #endif
@@ -189,19 +189,14 @@ void main(void)
     //
     Gpio_init();
 
-    Uint16 led = 1;
 
     LED_Alloff();
     for(;;)
     {
-        if(timer0_flag)
+        if(timer_1ms >= 500)
         {
-            timer0_flag = 0;
-            LED_Alloff();
-            LED_ON(led);
-            led++;
-            if(led > 7)
-                led = 1;
+            timer_1ms = 0;
+            LED_Run();
         }
     }
 }
@@ -212,7 +207,7 @@ void main(void)
 __interrupt void 
 cpu_timer0_isr(void)
 {
-    timer0_flag = 1;
+    timer_1ms++;
     CpuTimer0.InterruptCount++;
 
     //

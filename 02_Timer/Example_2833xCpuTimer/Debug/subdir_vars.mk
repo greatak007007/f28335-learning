@@ -22,7 +22,8 @@ C:/ti/c2000/C2000Ware_26_01_00_00/device_support/f2833x/common/source/DSP2833x_P
 C:/ti/c2000/C2000Ware_26_01_00_00/device_support/f2833x/common/source/DSP2833x_PieVect.c \
 C:/ti/c2000/C2000Ware_26_01_00_00/device_support/f2833x/common/source/DSP2833x_SysCtrl.c \
 ../Example_2833xCpuTimer.c \
-../Gpio.c 
+../Gpio.c \
+../LED.c 
 
 C_DEPS += \
 ./DSP2833x_CpuTimers.d \
@@ -32,7 +33,8 @@ C_DEPS += \
 ./DSP2833x_PieVect.d \
 ./DSP2833x_SysCtrl.d \
 ./Example_2833xCpuTimer.d \
-./Gpio.d 
+./Gpio.d \
+./LED.d 
 
 OBJS += \
 ./DSP2833x_ADC_cal.obj \
@@ -45,7 +47,8 @@ OBJS += \
 ./DSP2833x_SysCtrl.obj \
 ./DSP2833x_usDelay.obj \
 ./Example_2833xCpuTimer.obj \
-./Gpio.obj 
+./Gpio.obj \
+./LED.obj 
 
 ASM_DEPS += \
 ./DSP2833x_ADC_cal.d \
@@ -63,7 +66,8 @@ OBJS__QUOTED += \
 "DSP2833x_SysCtrl.obj" \
 "DSP2833x_usDelay.obj" \
 "Example_2833xCpuTimer.obj" \
-"Gpio.obj" 
+"Gpio.obj" \
+"LED.obj" 
 
 C_DEPS__QUOTED += \
 "DSP2833x_CpuTimers.d" \
@@ -73,7 +77,8 @@ C_DEPS__QUOTED += \
 "DSP2833x_PieVect.d" \
 "DSP2833x_SysCtrl.d" \
 "Example_2833xCpuTimer.d" \
-"Gpio.d" 
+"Gpio.d" \
+"LED.d" 
 
 ASM_DEPS__QUOTED += \
 "DSP2833x_ADC_cal.d" \
@@ -93,6 +98,7 @@ C_SRCS__QUOTED += \
 "C:/ti/c2000/C2000Ware_26_01_00_00/device_support/f2833x/common/source/DSP2833x_PieVect.c" \
 "C:/ti/c2000/C2000Ware_26_01_00_00/device_support/f2833x/common/source/DSP2833x_SysCtrl.c" \
 "../Example_2833xCpuTimer.c" \
-"../Gpio.c" 
+"../Gpio.c" \
+"../LED.c" 
 
 

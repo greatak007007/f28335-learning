@@ -53,5 +53,10 @@
       "directory" : "E:/dsp_28335_code/f28335-learning/02_Timer/Example_2833xCpuTimer/Debug",
       "command"   : "clang++ -I\"C:/ti/ccs2100/ccs/tools/compiler/ti-cgt-c2000_25.11.1.LTS/include\" -I\"C:/ti/c2000/C2000Ware_26_01_00_00/device_support/f2833x/headers/include\" -I\"C:/ti/c2000/C2000Ware_26_01_00_00/device_support/f2833x/common/include\" -I\"C:/ti/c2000/C2000Ware_26_01_00_00/libraries/math/IQmath/c28/include\" -I\"C:/ti/c2000/C2000Ware_26_01_00_00/libraries/math/FPUfastRTS/c28/include\" -D_DEBUG -DLARGE_MODEL -xc",
       "file"      : "E:/dsp_28335_code/f28335-learning/02_Timer/Example_2833xCpuTimer/Gpio.c"
+   },
+   {
+      "directory" : "E:/dsp_28335_code/f28335-learning/02_Timer/Example_2833xCpuTimer/Debug",
+      "command"   : "clang++ -I\"C:/ti/ccs2100/ccs/tools/compiler/ti-cgt-c2000_25.11.1.LTS/include\" -I\"C:/ti/c2000/C2000Ware_26_01_00_00/device_support/f2833x/headers/include\" -I\"C:/ti/c2000/C2000Ware_26_01_00_00/device_support/f2833x/common/include\" -I\"C:/ti/c2000/C2000Ware_26_01_00_00/libraries/math/IQmath/c28/include\" -I\"C:/ti/c2000/C2000Ware_26_01_00_00/libraries/math/FPUfastRTS/c28/include\" -D_DEBUG -DLARGE_MODEL -xc",
+      "file"      : "E:/dsp_28335_code/f28335-learning/02_Timer/Example_2833xCpuTimer/LED.c"
    }
 ]
