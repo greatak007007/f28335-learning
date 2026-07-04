@@ -4,15 +4,31 @@ static Uint16 key_event = 0;
 void KEY_Scan(void)
 {
     static Uint16 last = 1;
-    Uint16 now;
+    static Uint16 key_stable = 1;
+    static Uint16 debounce_cnt = 0;
+    Uint16 now = GpioDataRegs.GPADAT.bit.GPIO12;
 
-    now = GpioDataRegs.GPADAT.bit.GPIO12;
-    if (last == 1 && now == 0)
+    if (now != key_stable)
     {
-        key_event = 1;
-    }
+        debounce_cnt++;
+        if (debounce_cnt >= 2)
+        {
+            key_stable = now;
+            debounce_cnt = 0;
 
-    last = now;
+            if(key_stable == 0)
+            {
+                key_event = 1;
+            }
+
+        }
+    }
+    else 
+    {
+        debounce_cnt = 0;
+    }
+    
+
 }
 
 Uint16 KEY_GetEvent(void)

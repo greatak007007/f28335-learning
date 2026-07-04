@@ -1,7 +1,7 @@
 ******************************************************************************
              TMS320C2000 Linker PC v25.11.1                    
 ******************************************************************************
->> Linked Sat Jul  4 10:31:16 2026
+>> Linked Sat Jul  4 12:34:09 2026
 
 OUTPUT FILE NAME:   <Example_2833xCpuTimer.out>
 ENTRY POINT SYMBOL: "code_start"  address: 00000000
@@ -14,8 +14,8 @@ MEMORY CONFIGURATION
 PAGE 0:
   BEGIN                 00000000   00000002  00000002  00000000  RWIX
   RAMM0                 00000050   000003b0  00000000  000003b0  RWIX
-  RAML0                 00008000   00001000  0000002f  00000fd1  RWIX
-  RAML1                 00009000   00001000  00000734  000008cc  RWIX
+  RAML0                 00008000   00001000  00000033  00000fcd  RWIX
+  RAML1                 00009000   00001000  0000073b  000008c5  RWIX
   RAML2                 0000a000   00001000  00000000  00001000  RWIX
   RAML3                 0000b000   00001000  00000000  00001000  RWIX
   ZONE7A                00200000   0000fc00  00000000  0000fc00  RWIX
@@ -79,7 +79,7 @@ PAGE 1:
   SCIB                  00007750   00000010  00000010  00000000  RWIX
   SCIC                  00007770   00000010  00000010  00000000  RWIX
   I2CA                  00007900   00000040  00000022  0000001e  RWIX
-  RAML4                 0000c000   00001000  00000027  00000fd9  RWIX
+  RAML4                 0000c000   00001000  00000029  00000fd7  RWIX
   RAML5                 0000d000   00001000  00000100  00000f00  RWIX
   RAML6                 0000e000   00001000  00000000  00001000  RWIX
   RAML7                 0000f000   00001000  00000000  00001000  RWIX
@@ -98,17 +98,17 @@ codestart
                   00000000    00000002     DSP2833x_CodeStartBranch.obj (codestart)
 
 .TI.ramfunc 
-*          0    0000802b    00000004     
-                  0000802b    00000004     DSP2833x_usDelay.obj (.TI.ramfunc)
+*          0    0000802f    00000004     
+                  0000802f    00000004     DSP2833x_usDelay.obj (.TI.ramfunc)
 
-.cinit     0    00008000    0000002b     
+.cinit     0    00008000    0000002f     
                   00008000    0000000e     rts2800_fpu32.lib : exit.c.obj (.cinit)
-                  0000800e    00000008     key.obj (.cinit)
-                  00008016    00000005     Example_2833xCpuTimer.obj (.cinit)
-                  0000801b    00000005     rts2800_fpu32.lib : _lock.c.obj (.cinit:__lock)
-                  00008020    00000005                       : _lock.c.obj (.cinit:__unlock)
-                  00008025    00000004     LED.obj (.cinit)
-                  00008029    00000002     --HOLE-- [fill = 0]
+                  0000800e    0000000c     key.obj (.cinit)
+                  0000801a    00000005     Example_2833xCpuTimer.obj (.cinit)
+                  0000801f    00000005     rts2800_fpu32.lib : _lock.c.obj (.cinit:__lock)
+                  00008024    00000005                       : _lock.c.obj (.cinit:__unlock)
+                  00008029    00000004     LED.obj (.cinit)
+                  0000802d    00000002     --HOLE-- [fill = 0]
 
 .pinit     0    00008000    00000000     UNINITIALIZED
 
@@ -167,14 +167,14 @@ ECanbMOTORegsFile
 *          1    000062c0    00000040     UNINITIALIZED
                   000062c0    00000040     DSP2833x_GlobalVariableDefs.obj (ECanbMOTORegsFile)
 
-.ebss      1    0000c000    00000027     UNINITIALIZED
+.ebss      1    0000c000    00000029     UNINITIALIZED
                   0000c000    00000018     DSP2833x_CpuTimers.obj (.ebss)
                   0000c018    00000006     rts2800_fpu32.lib : exit.c.obj (.ebss)
-                  0000c01e    00000002     Example_2833xCpuTimer.obj (.ebss)
-                  0000c020    00000002     rts2800_fpu32.lib : _lock.c.obj (.ebss:__lock)
-                  0000c022    00000002                       : _lock.c.obj (.ebss:__unlock)
-                  0000c024    00000002     key.obj (.ebss)
-                  0000c026    00000001     LED.obj (.ebss)
+                  0000c01e    00000004     key.obj (.ebss)
+                  0000c022    00000002     Example_2833xCpuTimer.obj (.ebss)
+                  0000c024    00000002     rts2800_fpu32.lib : _lock.c.obj (.ebss:__lock)
+                  0000c026    00000002                       : _lock.c.obj (.ebss:__unlock)
+                  0000c028    00000001     LED.obj (.ebss)
 
 .econst    1    0000d000    00000100     
                   0000d000    00000100     DSP2833x_PieVect.obj (.econst:_PieVectTableInit)
@@ -338,7 +338,7 @@ PartIdRegsFile
 *          1    00380090    00000001     UNINITIALIZED
                   00380090    00000001     DSP2833x_GlobalVariableDefs.obj (PartIdRegsFile)
 
-.text      0    00009000    00000734     
+.text      0    00009000    0000073b     
                   00009000    00000316     DSP2833x_DefaultIsr.obj (.text:retain)
                   00009316    000000f7     DSP2833x_SysCtrl.obj (.text)
                   0000940d    00000087     Example_2833xCpuTimer.obj (.text)
@@ -350,14 +350,14 @@ PartIdRegsFile
                   0000963d    00000029     rts2800_fpu32.lib : exit.c.obj (.text)
                   00009666    00000028     DSP2833x_PieCtrl.obj (.text)
                   0000968e    00000024     rts2800_fpu32.lib : cpy_tbl.c.obj (.text)
-                  000096b2    00000020     DSP2833x_PieVect.obj (.text)
-                  000096d2    00000020     rts2800_fpu32.lib : memcpy.c.obj (.text)
-                  000096f2    0000001c     key.obj (.text)
-                  0000970e    00000012     rts2800_fpu32.lib : args_main.c.obj (.text)
-                  00009720    00000009                       : _lock.c.obj (.text)
-                  00009729    00000008     DSP2833x_CodeStartBranch.obj (.text)
-                  00009731    00000002     rts2800_fpu32.lib : pre_init.c.obj (.text)
-                  00009733    00000001                       : startup.c.obj (.text)
+                  000096b2    00000023     key.obj (.text)
+                  000096d5    00000020     DSP2833x_PieVect.obj (.text)
+                  000096f5    00000020     rts2800_fpu32.lib : memcpy.c.obj (.text)
+                  00009715    00000012                       : args_main.c.obj (.text)
+                  00009727    00000009                       : _lock.c.obj (.text)
+                  00009730    00000008     DSP2833x_CodeStartBranch.obj (.text)
+                  00009738    00000002     rts2800_fpu32.lib : pre_init.c.obj (.text)
+                  0000973a    00000001                       : startup.c.obj (.text)
 
 MODULE SUMMARY
 
@@ -372,13 +372,13 @@ MODULE SUMMARY
        DSP2833x_CpuTimers.obj            116    0                  24                
        LED.obj                           94     4                  1                 
        Gpio.obj                          62     0                  0                 
+       key.obj                           35     12                 4                 
        DSP2833x_PieCtrl.obj              40     0                  0                 
-       key.obj                           28     8                  2                 
        DSP2833x_CodeStartBranch.obj      10     0                  0                 
        DSP2833x_ADC_cal.obj              7      0                  0                 
        DSP2833x_usDelay.obj              4      0                  0                 
     +--+---------------------------------+------+------------------+--------------------+
-       Total:                            1632   273                2708              
+       Total:                            1639   277                2710              
                                                                                      
     C:/ti/ccs2100/ccs/tools/compiler/ti-cgt-c2000_25.11.1.LTS/lib/rts2800_fpu32.lib
        boot28.asm.obj                    86     0                  0                 
@@ -394,7 +394,7 @@ MODULE SUMMARY
                                                                                      
        Stack:                            0      0                  512               
     +--+---------------------------------+------+------------------+--------------------+
-       Grand Total:                      1857   297                3230              
+       Grand Total:                      1864   301                3232              
 
 
 GLOBAL DATA SYMBOLS: SORTED BY DATA PAGE
@@ -495,9 +495,9 @@ address     data page           name
 0000c018     300 (0000c000)     ___TI_enable_exit_profile_output
 0000c01a     300 (0000c000)     ___TI_cleanup_ptr
 0000c01c     300 (0000c000)     ___TI_dtors_ptr
-0000c01e     300 (0000c000)     _SysTick
-0000c020     300 (0000c000)     __lock
-0000c022     300 (0000c000)     __unlock
+0000c022     300 (0000c000)     _SysTick
+0000c024     300 (0000c000)     __lock
+0000c026     300 (0000c000)     __unlock
 
 0000d000     340 (0000d000)     _PieVectTableInit
 
@@ -533,7 +533,7 @@ abs   ffffffff  .text
 0     00009226  _DINTCH4_ISR                    
 0     00009230  _DINTCH5_ISR                    
 0     0000923a  _DINTCH6_ISR                    
-0     0000802b  _DSP28x_usDelay                 
+0     0000802f  _DSP28x_usDelay                 
 1     00000880  _DevEmuRegs                     
 0     00009329  _DisableDog                     
 1     00001000  _DmaRegs                        
@@ -601,11 +601,11 @@ abs   ffffffff  .text
 0     00009494  _InitCpuTimers                  
 0     00009381  _InitPeripheralClocks           
 0     00009666  _InitPieCtrl                    
-0     000096b2  _InitPieVectTable               
+0     000096d5  _InitPieVectTable               
 0     00009331  _InitPll                        
 0     00009316  _InitSysCtrl                    
-0     00009706  _KEY_GetEvent                   
-0     000096f2  _KEY_Scan                       
+0     000096cd  _KEY_GetEvent                   
+0     000096b2  _KEY_Scan                       
 0     00009508  _LED_Alloff                     
 0     00009519  _LED_ON                         
 0     00009556  _LED_Run                        
@@ -640,7 +640,7 @@ abs   ffffffff  .text
 0     0000931f  _ServiceDog                     
 1     00007040  _SpiaRegs                       
 1     00007010  _SysCtrlRegs                    
-1     0000c01e  _SysTick                        
+1     0000c022  _SysTick                        
 0     000090f0  _TINT0_ISR                      
 0     000090a0  _USER10_ISR                     
 0     000090aa  _USER11_ISR                     
@@ -678,15 +678,15 @@ abs   ffffffff  ___c_args__
 abs   ffffffff  ___etext__                      
 abs   ffffffff  ___pinit__                      
 abs   ffffffff  ___text__                       
-0     0000970e  __args_main                     
-1     0000c020  __lock                          
-0     00009728  __nop                           
-0     00009724  __register_lock                 
-0     00009720  __register_unlock               
+0     00009715  __args_main                     
+1     0000c024  __lock                          
+0     0000972f  __nop                           
+0     0000972b  __register_lock                 
+0     00009727  __register_unlock               
 1     00000400  __stack                         
-0     00009733  __system_post_cinit             
-0     00009731  __system_pre_init               
-1     0000c022  __unlock                        
+0     0000973a  __system_post_cinit             
+0     00009738  __system_pre_init               
+1     0000c026  __unlock                        
 0     0000963d  _abort                          
 0     00009566  _c_int00                        
 0     0000968e  _copy_in                        
@@ -695,7 +695,7 @@ abs   ffffffff  ___text__
 0     000095ea  _cpu_timer2_isr                 
 0     0000963f  _exit                           
 0     0000940d  _main                           
-0     000096d2  _memcpy                         
+0     000096f5  _memcpy                         
 0     0000930c  _rsvd_ISR                       
 abs   ffffffff  binit                           
 0     00008000  cinit                           
@@ -711,7 +711,7 @@ page  address   name
 0     00000000  code_start                      
 0     00008000  ___cinit__                      
 0     00008000  cinit                           
-0     0000802b  _DSP28x_usDelay                 
+0     0000802f  _DSP28x_usDelay                 
 0     00009000  _INT13_ISR                      
 0     0000900a  _INT14_ISR                      
 0     00009014  _DATALOG_ISR                    
@@ -814,16 +814,16 @@ page  address   name
 0     00009666  _InitPieCtrl                    
 0     00009685  _EnableInterrupts               
 0     0000968e  _copy_in                        
-0     000096b2  _InitPieVectTable               
-0     000096d2  _memcpy                         
-0     000096f2  _KEY_Scan                       
-0     00009706  _KEY_GetEvent                   
-0     0000970e  __args_main                     
-0     00009720  __register_unlock               
-0     00009724  __register_lock                 
-0     00009728  __nop                           
-0     00009731  __system_pre_init               
-0     00009733  __system_post_cinit             
+0     000096b2  _KEY_Scan                       
+0     000096cd  _KEY_GetEvent                   
+0     000096d5  _InitPieVectTable               
+0     000096f5  _memcpy                         
+0     00009715  __args_main                     
+0     00009727  __register_unlock               
+0     0000972b  __register_lock                 
+0     0000972f  __nop                           
+0     00009738  __system_pre_init               
+0     0000973a  __system_post_cinit             
 0     00380080  _ADC_cal                        
 1     00000400  __stack                         
 1     00000600  __STACK_END                     
@@ -881,9 +881,9 @@ page  address   name
 1     0000c018  ___TI_enable_exit_profile_output
 1     0000c01a  ___TI_cleanup_ptr               
 1     0000c01c  ___TI_dtors_ptr                 
-1     0000c01e  _SysTick                        
-1     0000c020  __lock                          
-1     0000c022  __unlock                        
+1     0000c022  _SysTick                        
+1     0000c024  __lock                          
+1     0000c026  __unlock                        
 1     0000d000  _PieVectTableInit               
 1     0033fff8  _CsmPwl                         
 1     00380090  _PartIdRegs                     
