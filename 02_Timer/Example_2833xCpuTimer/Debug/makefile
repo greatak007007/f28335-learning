@@ -23,8 +23,8 @@ ORDERED_OBJS += \
 "./DSP2833x_usDelay.obj" \
 "./Example_2833xCpuTimer.obj" \
 "./Gpio.obj" \
-"C:/ti/C2000Ware_26_01_00_00/device_support/f2833x/common/cmd/28335_RAM_lnk.cmd" \
-"C:/ti/C2000Ware_26_01_00_00/device_support/f2833x/headers/cmd/DSP2833x_Headers_nonBIOS.cmd" \
+"C:/ti/c2000/C2000Ware_26_01_00_00/device_support/f2833x/common/cmd/28335_RAM_lnk.cmd" \
+"C:/ti/c2000/C2000Ware_26_01_00_00/device_support/f2833x/headers/cmd/DSP2833x_Headers_nonBIOS.cmd" \
 $(GEN_CMDS__FLAG) \
 -lIQmath_fpu32.lib \
 
@@ -139,7 +139,7 @@ all: Example_2833xCpuTimer.out
 # Tool invocations
 Example_2833xCpuTimer.out: $(OBJS) $(CMD_SRCS) $(GEN_CMDS)
 	@echo 'C2000 Linker - building target: "$@"'
-	"C:/ti/ccs2100/ccs/tools/compiler/ti-cgt-c2000_25.11.1.LTS/bin/cl2000" -v28 -ml -mt --float_support=fpu32 --define=_DEBUG --define=LARGE_MODEL -g --diag_suppress=10063 --diag_warning=225 --issue_remarks --verbose_diagnostics --quiet --abi=coffabi -z -m"Example_2833xCpuTimer.map" --stack_size=0x200 --warn_sections -i"C:/ti/ccs2100/ccs/tools/compiler/ti-cgt-c2000_25.11.1.LTS/lib" -i"C:/ti/ccs2100/ccs/tools/compiler/ti-cgt-c2000_25.11.1.LTS/include" -i"D:/DSP_28335_code/f28335-learning/02_Timer/Example_2833xCpuTimer" -i"C:/ti/C2000Ware_26_01_00_00/device_support/f2833x/common/lib" -i"C:/ti/C2000Ware_26_01_00_00/libraries/math/IQmath/c28/lib" -i"C:/ti/C2000Ware_26_01_00_00/libraries/math/FPUfastRTS/c28/lib" --priority --reread_libs --issue_remarks --verbose_diagnostics --xml_link_info="Example_2833xCpuTimer_linkInfo.xml" --entry_point=code_start --rom_model -o "Example_2833xCpuTimer.out" $(ORDERED_OBJS)
+	"C:/ti/ccs2100/ccs/tools/compiler/ti-cgt-c2000_25.11.1.LTS/bin/cl2000" -v28 -ml -mt --float_support=fpu32 --define=_DEBUG --define=LARGE_MODEL -g --diag_suppress=10063 --diag_warning=225 --issue_remarks --verbose_diagnostics --quiet --abi=coffabi -z -m"Example_2833xCpuTimer.map" --stack_size=0x200 --warn_sections -i"C:/ti/ccs2100/ccs/tools/compiler/ti-cgt-c2000_25.11.1.LTS/lib" -i"C:/ti/ccs2100/ccs/tools/compiler/ti-cgt-c2000_25.11.1.LTS/include" -i"E:/dsp_28335_code/f28335-learning/02_Timer/Example_2833xCpuTimer" -i"C:/ti/c2000/C2000Ware_26_01_00_00/device_support/f2833x/common/lib" -i"C:/ti/c2000/C2000Ware_26_01_00_00/libraries/math/IQmath/c28/lib" -i"C:/ti/c2000/C2000Ware_26_01_00_00/libraries/math/FPUfastRTS/c28/lib" --priority --reread_libs --issue_remarks --verbose_diagnostics --xml_link_info="Example_2833xCpuTimer_linkInfo.xml" --entry_point=code_start --rom_model -o "Example_2833xCpuTimer.out" $(ORDERED_OBJS)
 	@echo 'Finished building target: "$@"'
 	@echo ' '
 

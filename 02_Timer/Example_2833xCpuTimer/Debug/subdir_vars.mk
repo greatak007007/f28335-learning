@@ -6,21 +6,21 @@ SHELL = cmd.exe
 
 # Add inputs and outputs from these tool invocations to the build variables 
 CMD_SRCS += \
-C:/ti/C2000Ware_26_01_00_00/device_support/f2833x/common/cmd/28335_RAM_lnk.cmd \
-C:/ti/C2000Ware_26_01_00_00/device_support/f2833x/headers/cmd/DSP2833x_Headers_nonBIOS.cmd 
+C:/ti/c2000/C2000Ware_26_01_00_00/device_support/f2833x/common/cmd/28335_RAM_lnk.cmd \
+C:/ti/c2000/C2000Ware_26_01_00_00/device_support/f2833x/headers/cmd/DSP2833x_Headers_nonBIOS.cmd 
 
 ASM_SRCS += \
-C:/ti/C2000Ware_26_01_00_00/device_support/f2833x/common/source/DSP2833x_ADC_cal.asm \
-C:/ti/C2000Ware_26_01_00_00/device_support/f2833x/common/source/DSP2833x_CodeStartBranch.asm \
-C:/ti/C2000Ware_26_01_00_00/device_support/f2833x/common/source/DSP2833x_usDelay.asm 
+C:/ti/c2000/C2000Ware_26_01_00_00/device_support/f2833x/common/source/DSP2833x_ADC_cal.asm \
+C:/ti/c2000/C2000Ware_26_01_00_00/device_support/f2833x/common/source/DSP2833x_CodeStartBranch.asm \
+C:/ti/c2000/C2000Ware_26_01_00_00/device_support/f2833x/common/source/DSP2833x_usDelay.asm 
 
 C_SRCS += \
-C:/ti/C2000Ware_26_01_00_00/device_support/f2833x/common/source/DSP2833x_CpuTimers.c \
-C:/ti/C2000Ware_26_01_00_00/device_support/f2833x/common/source/DSP2833x_DefaultIsr.c \
-C:/ti/C2000Ware_26_01_00_00/device_support/f2833x/headers/source/DSP2833x_GlobalVariableDefs.c \
-C:/ti/C2000Ware_26_01_00_00/device_support/f2833x/common/source/DSP2833x_PieCtrl.c \
-C:/ti/C2000Ware_26_01_00_00/device_support/f2833x/common/source/DSP2833x_PieVect.c \
-C:/ti/C2000Ware_26_01_00_00/device_support/f2833x/common/source/DSP2833x_SysCtrl.c \
+C:/ti/c2000/C2000Ware_26_01_00_00/device_support/f2833x/common/source/DSP2833x_CpuTimers.c \
+C:/ti/c2000/C2000Ware_26_01_00_00/device_support/f2833x/common/source/DSP2833x_DefaultIsr.c \
+C:/ti/c2000/C2000Ware_26_01_00_00/device_support/f2833x/headers/source/DSP2833x_GlobalVariableDefs.c \
+C:/ti/c2000/C2000Ware_26_01_00_00/device_support/f2833x/common/source/DSP2833x_PieCtrl.c \
+C:/ti/c2000/C2000Ware_26_01_00_00/device_support/f2833x/common/source/DSP2833x_PieVect.c \
+C:/ti/c2000/C2000Ware_26_01_00_00/device_support/f2833x/common/source/DSP2833x_SysCtrl.c \
 ../Example_2833xCpuTimer.c \
 ../Gpio.c 
 
@@ -81,17 +81,17 @@ ASM_DEPS__QUOTED += \
 "DSP2833x_usDelay.d" 
 
 ASM_SRCS__QUOTED += \
-"C:/ti/C2000Ware_26_01_00_00/device_support/f2833x/common/source/DSP2833x_ADC_cal.asm" \
-"C:/ti/C2000Ware_26_01_00_00/device_support/f2833x/common/source/DSP2833x_CodeStartBranch.asm" \
-"C:/ti/C2000Ware_26_01_00_00/device_support/f2833x/common/source/DSP2833x_usDelay.asm" 
+"C:/ti/c2000/C2000Ware_26_01_00_00/device_support/f2833x/common/source/DSP2833x_ADC_cal.asm" \
+"C:/ti/c2000/C2000Ware_26_01_00_00/device_support/f2833x/common/source/DSP2833x_CodeStartBranch.asm" \
+"C:/ti/c2000/C2000Ware_26_01_00_00/device_support/f2833x/common/source/DSP2833x_usDelay.asm" 
 
 C_SRCS__QUOTED += \
-"C:/ti/C2000Ware_26_01_00_00/device_support/f2833x/common/source/DSP2833x_CpuTimers.c" \
-"C:/ti/C2000Ware_26_01_00_00/device_support/f2833x/common/source/DSP2833x_DefaultIsr.c" \
-"C:/ti/C2000Ware_26_01_00_00/device_support/f2833x/headers/source/DSP2833x_GlobalVariableDefs.c" \
-"C:/ti/C2000Ware_26_01_00_00/device_support/f2833x/common/source/DSP2833x_PieCtrl.c" \
-"C:/ti/C2000Ware_26_01_00_00/device_support/f2833x/common/source/DSP2833x_PieVect.c" \
-"C:/ti/C2000Ware_26_01_00_00/device_support/f2833x/common/source/DSP2833x_SysCtrl.c" \
+"C:/ti/c2000/C2000Ware_26_01_00_00/device_support/f2833x/common/source/DSP2833x_CpuTimers.c" \
+"C:/ti/c2000/C2000Ware_26_01_00_00/device_support/f2833x/common/source/DSP2833x_DefaultIsr.c" \
+"C:/ti/c2000/C2000Ware_26_01_00_00/device_support/f2833x/headers/source/DSP2833x_GlobalVariableDefs.c" \
+"C:/ti/c2000/C2000Ware_26_01_00_00/device_support/f2833x/common/source/DSP2833x_PieCtrl.c" \
+"C:/ti/c2000/C2000Ware_26_01_00_00/device_support/f2833x/common/source/DSP2833x_PieVect.c" \
+"C:/ti/c2000/C2000Ware_26_01_00_00/device_support/f2833x/common/source/DSP2833x_SysCtrl.c" \
 "../Example_2833xCpuTimer.c" \
 "../Gpio.c" 
 

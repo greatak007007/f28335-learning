@@ -11,6 +11,6 @@
 "./DSP2833x_usDelay.obj"
 "./Example_2833xCpuTimer.obj"
 "./Gpio.obj"
-"C:/ti/C2000Ware_26_01_00_00/device_support/f2833x/common/cmd/28335_RAM_lnk.cmd"
-"C:/ti/C2000Ware_26_01_00_00/device_support/f2833x/headers/cmd/DSP2833x_Headers_nonBIOS.cmd"
+"C:/ti/c2000/C2000Ware_26_01_00_00/device_support/f2833x/common/cmd/28335_RAM_lnk.cmd"
+"C:/ti/c2000/C2000Ware_26_01_00_00/device_support/f2833x/headers/cmd/DSP2833x_Headers_nonBIOS.cmd"
 -lIQmath_fpu32.lib

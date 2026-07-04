@@ -189,13 +189,19 @@ void main(void)
     //
     Gpio_init();
 
+    Uint16 led = 1;
+
     LED_Alloff();
     for(;;)
     {
         if(timer0_flag)
         {
             timer0_flag = 0;
-            GpioDataRegs.GPCTOGGLE.bit.GPIO67 = 1;
+            LED_Alloff();
+            LED_ON(led);
+            led++;
+            if(led > 7)
+                led = 1;
         }
     }
 }
