@@ -1,5 +1,5 @@
 #include "DSP28x_Project.h"     // Device Headerfile and Examples Include File
-static Uint16 led = 1;
+static Uint16 led = 2;
 
 
 void LED_Alloff(void)
@@ -50,5 +50,5 @@ void LED_Run(void)
     LED_ON(led);
     led++;
     if(led > 7)
-        led = 1;
+        led = 2;
 }

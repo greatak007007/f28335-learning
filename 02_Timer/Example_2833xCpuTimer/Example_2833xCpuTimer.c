@@ -56,6 +56,8 @@
 //
 #include "DSP28x_Project.h"     // Device Headerfile and Examples Include File
 #include "Gpio.h"
+#include "LED.h"
+#include "key.h"
 //
 // Function Prototype statements
 //
@@ -63,13 +65,17 @@ __interrupt void cpu_timer0_isr(void);
 __interrupt void cpu_timer1_isr(void);
 __interrupt void cpu_timer2_isr(void);
 
-volatile Uint16 timer_1ms = 0;
+volatile Uint32 SysTick = 0;
 
 //
 // Main
 //
 void main(void)
 {
+    Uint32 last10 = 0;
+    Uint32 last100 = 0;
+    Uint32 last500 = 0;
+    Uint16 key_flag = 0;
     //
     // Step 1. Initialize System Control:
     // PLL, WatchDog, enable Peripheral Clocks
@@ -189,14 +195,26 @@ void main(void)
     //
     Gpio_init();
 
-
     LED_Alloff();
     for(;;)
     {
-        if(timer_1ms >= 500)
+        if(SysTick-last10 >= 10)
         {
-            timer_1ms = 0;
-            LED_Run();
+            last10 = SysTick;
+            KEY_Scan();
+        }
+        if(KEY_GetEvent())
+        {
+            key_flag = !key_flag;
+        }
+
+        if(SysTick - last100 >= 100)
+        {
+            last100 = SysTick;
+            if(key_flag)
+                LED_Run();
+            else
+                LED_Alloff();
         }
     }
 }
@@ -207,7 +225,7 @@ void main(void)
 __interrupt void 
 cpu_timer0_isr(void)
 {
-    timer_1ms++;
+    SysTick++;
     CpuTimer0.InterruptCount++;
 
     //

@@ -28,6 +28,8 @@ Example_2833xCpuTimer.obj: C:/ti/c2000/C2000Ware_26_01_00_00/device_support/f283
 Example_2833xCpuTimer.obj: C:/ti/c2000/C2000Ware_26_01_00_00/device_support/f2833x/common/include/DSP2833x_I2c_defines.h
 Example_2833xCpuTimer.obj: C:/ti/c2000/C2000Ware_26_01_00_00/device_support/f2833x/common/include/DSP2833x_DefaultIsr.h
 Example_2833xCpuTimer.obj: ../Gpio.h
+Example_2833xCpuTimer.obj: ../LED.h
+Example_2833xCpuTimer.obj: ../key.h
 
 ../Example_2833xCpuTimer.c:
 
@@ -84,4 +86,8 @@ C:/ti/c2000/C2000Ware_26_01_00_00/device_support/f2833x/common/include/DSP2833x_
 C:/ti/c2000/C2000Ware_26_01_00_00/device_support/f2833x/common/include/DSP2833x_DefaultIsr.h:
 
 ../Gpio.h:
+
+../LED.h:
+
+../key.h:
 
