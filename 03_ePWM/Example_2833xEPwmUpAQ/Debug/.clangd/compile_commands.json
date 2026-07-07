@@ -1,67 +1,62 @@
 [
    {
-      "directory" : "D:/DSP_28335_code/f28335-learning/02_Timer/Example_2833xCpuTimer/Debug",
+      "directory" : "D:/DSP_28335_code/f28335-learning/03_ePWM/Example_2833xEPwmUpAQ/Debug",
       "command"   : "clang++ -I\"C:/ti/ccs2100/ccs/tools/compiler/ti-cgt-c2000_25.11.1.LTS/include\" -I\"C:/ti/C2000Ware_26_01_00_00/device_support/f2833x/headers/include\" -I\"C:/ti/C2000Ware_26_01_00_00/device_support/f2833x/common/include\" -I\"C:/ti/C2000Ware_26_01_00_00/libraries/math/IQmath/c28/include\" -I\"C:/ti/C2000Ware_26_01_00_00/libraries/math/FPUfastRTS/c28/include\" -D_DEBUG -DLARGE_MODEL",
       "file"      : "C:/ti/C2000Ware_26_01_00_00/device_support/f2833x/common/source/DSP2833x_ADC_cal.asm"
    },
    {
-      "directory" : "D:/DSP_28335_code/f28335-learning/02_Timer/Example_2833xCpuTimer/Debug",
+      "directory" : "D:/DSP_28335_code/f28335-learning/03_ePWM/Example_2833xEPwmUpAQ/Debug",
       "command"   : "clang++ -I\"C:/ti/ccs2100/ccs/tools/compiler/ti-cgt-c2000_25.11.1.LTS/include\" -I\"C:/ti/C2000Ware_26_01_00_00/device_support/f2833x/headers/include\" -I\"C:/ti/C2000Ware_26_01_00_00/device_support/f2833x/common/include\" -I\"C:/ti/C2000Ware_26_01_00_00/libraries/math/IQmath/c28/include\" -I\"C:/ti/C2000Ware_26_01_00_00/libraries/math/FPUfastRTS/c28/include\" -D_DEBUG -DLARGE_MODEL",
       "file"      : "C:/ti/C2000Ware_26_01_00_00/device_support/f2833x/common/source/DSP2833x_CodeStartBranch.asm"
    },
    {
-      "directory" : "D:/DSP_28335_code/f28335-learning/02_Timer/Example_2833xCpuTimer/Debug",
+      "directory" : "D:/DSP_28335_code/f28335-learning/03_ePWM/Example_2833xEPwmUpAQ/Debug",
       "command"   : "clang++ -I\"C:/ti/ccs2100/ccs/tools/compiler/ti-cgt-c2000_25.11.1.LTS/include\" -I\"C:/ti/C2000Ware_26_01_00_00/device_support/f2833x/headers/include\" -I\"C:/ti/C2000Ware_26_01_00_00/device_support/f2833x/common/include\" -I\"C:/ti/C2000Ware_26_01_00_00/libraries/math/IQmath/c28/include\" -I\"C:/ti/C2000Ware_26_01_00_00/libraries/math/FPUfastRTS/c28/include\" -D_DEBUG -DLARGE_MODEL -xc",
       "file"      : "C:/ti/C2000Ware_26_01_00_00/device_support/f2833x/common/source/DSP2833x_CpuTimers.c"
    },
    {
-      "directory" : "D:/DSP_28335_code/f28335-learning/02_Timer/Example_2833xCpuTimer/Debug",
+      "directory" : "D:/DSP_28335_code/f28335-learning/03_ePWM/Example_2833xEPwmUpAQ/Debug",
       "command"   : "clang++ -I\"C:/ti/ccs2100/ccs/tools/compiler/ti-cgt-c2000_25.11.1.LTS/include\" -I\"C:/ti/C2000Ware_26_01_00_00/device_support/f2833x/headers/include\" -I\"C:/ti/C2000Ware_26_01_00_00/device_support/f2833x/common/include\" -I\"C:/ti/C2000Ware_26_01_00_00/libraries/math/IQmath/c28/include\" -I\"C:/ti/C2000Ware_26_01_00_00/libraries/math/FPUfastRTS/c28/include\" -D_DEBUG -DLARGE_MODEL -xc",
       "file"      : "C:/ti/C2000Ware_26_01_00_00/device_support/f2833x/common/source/DSP2833x_DefaultIsr.c"
    },
    {
-      "directory" : "D:/DSP_28335_code/f28335-learning/02_Timer/Example_2833xCpuTimer/Debug",
+      "directory" : "D:/DSP_28335_code/f28335-learning/03_ePWM/Example_2833xEPwmUpAQ/Debug",
+      "command"   : "clang++ -I\"C:/ti/ccs2100/ccs/tools/compiler/ti-cgt-c2000_25.11.1.LTS/include\" -I\"C:/ti/C2000Ware_26_01_00_00/device_support/f2833x/headers/include\" -I\"C:/ti/C2000Ware_26_01_00_00/device_support/f2833x/common/include\" -I\"C:/ti/C2000Ware_26_01_00_00/libraries/math/IQmath/c28/include\" -I\"C:/ti/C2000Ware_26_01_00_00/libraries/math/FPUfastRTS/c28/include\" -D_DEBUG -DLARGE_MODEL -xc",
+      "file"      : "C:/ti/C2000Ware_26_01_00_00/device_support/f2833x/common/source/DSP2833x_EPwm.c"
+   },
+   {
+      "directory" : "D:/DSP_28335_code/f28335-learning/03_ePWM/Example_2833xEPwmUpAQ/Debug",
       "command"   : "clang++ -I\"C:/ti/ccs2100/ccs/tools/compiler/ti-cgt-c2000_25.11.1.LTS/include\" -I\"C:/ti/C2000Ware_26_01_00_00/device_support/f2833x/headers/include\" -I\"C:/ti/C2000Ware_26_01_00_00/device_support/f2833x/common/include\" -I\"C:/ti/C2000Ware_26_01_00_00/libraries/math/IQmath/c28/include\" -I\"C:/ti/C2000Ware_26_01_00_00/libraries/math/FPUfastRTS/c28/include\" -D_DEBUG -DLARGE_MODEL -xc",
       "file"      : "C:/ti/C2000Ware_26_01_00_00/device_support/f2833x/headers/source/DSP2833x_GlobalVariableDefs.c"
    },
    {
-      "directory" : "D:/DSP_28335_code/f28335-learning/02_Timer/Example_2833xCpuTimer/Debug",
+      "directory" : "D:/DSP_28335_code/f28335-learning/03_ePWM/Example_2833xEPwmUpAQ/Debug",
       "command"   : "clang++ -I\"C:/ti/ccs2100/ccs/tools/compiler/ti-cgt-c2000_25.11.1.LTS/include\" -I\"C:/ti/C2000Ware_26_01_00_00/device_support/f2833x/headers/include\" -I\"C:/ti/C2000Ware_26_01_00_00/device_support/f2833x/common/include\" -I\"C:/ti/C2000Ware_26_01_00_00/libraries/math/IQmath/c28/include\" -I\"C:/ti/C2000Ware_26_01_00_00/libraries/math/FPUfastRTS/c28/include\" -D_DEBUG -DLARGE_MODEL -xc",
       "file"      : "C:/ti/C2000Ware_26_01_00_00/device_support/f2833x/common/source/DSP2833x_PieCtrl.c"
    },
    {
-      "directory" : "D:/DSP_28335_code/f28335-learning/02_Timer/Example_2833xCpuTimer/Debug",
+      "directory" : "D:/DSP_28335_code/f28335-learning/03_ePWM/Example_2833xEPwmUpAQ/Debug",
       "command"   : "clang++ -I\"C:/ti/ccs2100/ccs/tools/compiler/ti-cgt-c2000_25.11.1.LTS/include\" -I\"C:/ti/C2000Ware_26_01_00_00/device_support/f2833x/headers/include\" -I\"C:/ti/C2000Ware_26_01_00_00/device_support/f2833x/common/include\" -I\"C:/ti/C2000Ware_26_01_00_00/libraries/math/IQmath/c28/include\" -I\"C:/ti/C2000Ware_26_01_00_00/libraries/math/FPUfastRTS/c28/include\" -D_DEBUG -DLARGE_MODEL -xc",
       "file"      : "C:/ti/C2000Ware_26_01_00_00/device_support/f2833x/common/source/DSP2833x_PieVect.c"
    },
    {
-      "directory" : "D:/DSP_28335_code/f28335-learning/02_Timer/Example_2833xCpuTimer/Debug",
+      "directory" : "D:/DSP_28335_code/f28335-learning/03_ePWM/Example_2833xEPwmUpAQ/Debug",
       "command"   : "clang++ -I\"C:/ti/ccs2100/ccs/tools/compiler/ti-cgt-c2000_25.11.1.LTS/include\" -I\"C:/ti/C2000Ware_26_01_00_00/device_support/f2833x/headers/include\" -I\"C:/ti/C2000Ware_26_01_00_00/device_support/f2833x/common/include\" -I\"C:/ti/C2000Ware_26_01_00_00/libraries/math/IQmath/c28/include\" -I\"C:/ti/C2000Ware_26_01_00_00/libraries/math/FPUfastRTS/c28/include\" -D_DEBUG -DLARGE_MODEL -xc",
       "file"      : "C:/ti/C2000Ware_26_01_00_00/device_support/f2833x/common/source/DSP2833x_SysCtrl.c"
    },
    {
-      "directory" : "D:/DSP_28335_code/f28335-learning/02_Timer/Example_2833xCpuTimer/Debug",
+      "directory" : "D:/DSP_28335_code/f28335-learning/03_ePWM/Example_2833xEPwmUpAQ/Debug",
       "command"   : "clang++ -I\"C:/ti/ccs2100/ccs/tools/compiler/ti-cgt-c2000_25.11.1.LTS/include\" -I\"C:/ti/C2000Ware_26_01_00_00/device_support/f2833x/headers/include\" -I\"C:/ti/C2000Ware_26_01_00_00/device_support/f2833x/common/include\" -I\"C:/ti/C2000Ware_26_01_00_00/libraries/math/IQmath/c28/include\" -I\"C:/ti/C2000Ware_26_01_00_00/libraries/math/FPUfastRTS/c28/include\" -D_DEBUG -DLARGE_MODEL",
       "file"      : "C:/ti/C2000Ware_26_01_00_00/device_support/f2833x/common/source/DSP2833x_usDelay.asm"
    },
    {
-      "directory" : "D:/DSP_28335_code/f28335-learning/02_Timer/Example_2833xCpuTimer/Debug",
+      "directory" : "D:/DSP_28335_code/f28335-learning/03_ePWM/Example_2833xEPwmUpAQ/Debug",
       "command"   : "clang++ -I\"C:/ti/ccs2100/ccs/tools/compiler/ti-cgt-c2000_25.11.1.LTS/include\" -I\"C:/ti/C2000Ware_26_01_00_00/device_support/f2833x/headers/include\" -I\"C:/ti/C2000Ware_26_01_00_00/device_support/f2833x/common/include\" -I\"C:/ti/C2000Ware_26_01_00_00/libraries/math/IQmath/c28/include\" -I\"C:/ti/C2000Ware_26_01_00_00/libraries/math/FPUfastRTS/c28/include\" -D_DEBUG -DLARGE_MODEL -xc",
-      "file"      : "D:/DSP_28335_code/f28335-learning/02_Timer/Example_2833xCpuTimer/Example_2833xCpuTimer.c"
+      "file"      : "D:/DSP_28335_code/f28335-learning/03_ePWM/Example_2833xEPwmUpAQ/Example_2833xEPwmUpAQ.c"
    },
    {
-      "directory" : "D:/DSP_28335_code/f28335-learning/02_Timer/Example_2833xCpuTimer/Debug",
+      "directory" : "D:/DSP_28335_code/f28335-learning/03_ePWM/Example_2833xEPwmUpAQ/Debug",
       "command"   : "clang++ -I\"C:/ti/ccs2100/ccs/tools/compiler/ti-cgt-c2000_25.11.1.LTS/include\" -I\"C:/ti/C2000Ware_26_01_00_00/device_support/f2833x/headers/include\" -I\"C:/ti/C2000Ware_26_01_00_00/device_support/f2833x/common/include\" -I\"C:/ti/C2000Ware_26_01_00_00/libraries/math/IQmath/c28/include\" -I\"C:/ti/C2000Ware_26_01_00_00/libraries/math/FPUfastRTS/c28/include\" -D_DEBUG -DLARGE_MODEL -xc",
-      "file"      : "D:/DSP_28335_code/f28335-learning/02_Timer/Example_2833xCpuTimer/Gpio.c"
-   },
-   {
-      "directory" : "D:/DSP_28335_code/f28335-learning/02_Timer/Example_2833xCpuTimer/Debug",
-      "command"   : "clang++ -I\"C:/ti/ccs2100/ccs/tools/compiler/ti-cgt-c2000_25.11.1.LTS/include\" -I\"C:/ti/C2000Ware_26_01_00_00/device_support/f2833x/headers/include\" -I\"C:/ti/C2000Ware_26_01_00_00/device_support/f2833x/common/include\" -I\"C:/ti/C2000Ware_26_01_00_00/libraries/math/IQmath/c28/include\" -I\"C:/ti/C2000Ware_26_01_00_00/libraries/math/FPUfastRTS/c28/include\" -D_DEBUG -DLARGE_MODEL -xc",
-      "file"      : "D:/DSP_28335_code/f28335-learning/02_Timer/Example_2833xCpuTimer/LED.c"
-   },
-   {
-      "directory" : "D:/DSP_28335_code/f28335-learning/02_Timer/Example_2833xCpuTimer/Debug",
-      "command"   : "clang++ -I\"C:/ti/ccs2100/ccs/tools/compiler/ti-cgt-c2000_25.11.1.LTS/include\" -I\"C:/ti/C2000Ware_26_01_00_00/device_support/f2833x/headers/include\" -I\"C:/ti/C2000Ware_26_01_00_00/device_support/f2833x/common/include\" -I\"C:/ti/C2000Ware_26_01_00_00/libraries/math/IQmath/c28/include\" -I\"C:/ti/C2000Ware_26_01_00_00/libraries/math/FPUfastRTS/c28/include\" -D_DEBUG -DLARGE_MODEL -xc",
-      "file"      : "D:/DSP_28335_code/f28335-learning/02_Timer/Example_2833xCpuTimer/key.c"
+      "file"      : "D:/DSP_28335_code/f28335-learning/03_ePWM/Example_2833xEPwmUpAQ/epwm.c"
    }
 ]
