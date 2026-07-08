@@ -23,6 +23,8 @@ C:/ti/C2000Ware_26_01_00_00/device_support/f2833x/common/source/DSP2833x_PieCtrl
 C:/ti/C2000Ware_26_01_00_00/device_support/f2833x/common/source/DSP2833x_PieVect.c \
 C:/ti/C2000Ware_26_01_00_00/device_support/f2833x/common/source/DSP2833x_SysCtrl.c \
 ../Example_2833xEPwmUpAQ.c \
+../Gpio.c \
+../LED.c \
 ../epwm.c 
 
 C_DEPS += \
@@ -34,6 +36,8 @@ C_DEPS += \
 ./DSP2833x_PieVect.d \
 ./DSP2833x_SysCtrl.d \
 ./Example_2833xEPwmUpAQ.d \
+./Gpio.d \
+./LED.d \
 ./epwm.d 
 
 OBJS += \
@@ -48,6 +52,8 @@ OBJS += \
 ./DSP2833x_SysCtrl.obj \
 ./DSP2833x_usDelay.obj \
 ./Example_2833xEPwmUpAQ.obj \
+./Gpio.obj \
+./LED.obj \
 ./epwm.obj 
 
 ASM_DEPS += \
@@ -67,6 +73,8 @@ OBJS__QUOTED += \
 "DSP2833x_SysCtrl.obj" \
 "DSP2833x_usDelay.obj" \
 "Example_2833xEPwmUpAQ.obj" \
+"Gpio.obj" \
+"LED.obj" \
 "epwm.obj" 
 
 C_DEPS__QUOTED += \
@@ -78,6 +86,8 @@ C_DEPS__QUOTED += \
 "DSP2833x_PieVect.d" \
 "DSP2833x_SysCtrl.d" \
 "Example_2833xEPwmUpAQ.d" \
+"Gpio.d" \
+"LED.d" \
 "epwm.d" 
 
 ASM_DEPS__QUOTED += \
@@ -99,6 +109,8 @@ C_SRCS__QUOTED += \
 "C:/ti/C2000Ware_26_01_00_00/device_support/f2833x/common/source/DSP2833x_PieVect.c" \
 "C:/ti/C2000Ware_26_01_00_00/device_support/f2833x/common/source/DSP2833x_SysCtrl.c" \
 "../Example_2833xEPwmUpAQ.c" \
+"../Gpio.c" \
+"../LED.c" \
 "../epwm.c" 
 
 

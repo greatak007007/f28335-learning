@@ -23,6 +23,8 @@ ORDERED_OBJS += \
 "./DSP2833x_SysCtrl.obj" \
 "./DSP2833x_usDelay.obj" \
 "./Example_2833xEPwmUpAQ.obj" \
+"./Gpio.obj" \
+"./LED.obj" \
 "./epwm.obj" \
 "C:/ti/C2000Ware_26_01_00_00/device_support/f2833x/common/cmd/28335_RAM_lnk.cmd" \
 "C:/ti/C2000Ware_26_01_00_00/device_support/f2833x/headers/cmd/DSP2833x_Headers_nonBIOS.cmd" \
@@ -147,8 +149,8 @@ Example_2833xEPwmUpAQ.out: $(OBJS) $(CMD_SRCS) $(GEN_CMDS)
 # Other Targets
 clean:
 	-$(RM) $(EXE_OUTPUTS__QUOTED)
-	-$(RM) "DSP2833x_ADC_cal.obj" "DSP2833x_CodeStartBranch.obj" "DSP2833x_CpuTimers.obj" "DSP2833x_DefaultIsr.obj" "DSP2833x_EPwm.obj" "DSP2833x_GlobalVariableDefs.obj" "DSP2833x_PieCtrl.obj" "DSP2833x_PieVect.obj" "DSP2833x_SysCtrl.obj" "DSP2833x_usDelay.obj" "Example_2833xEPwmUpAQ.obj" "epwm.obj" 
-	-$(RM) "DSP2833x_CpuTimers.d" "DSP2833x_DefaultIsr.d" "DSP2833x_EPwm.d" "DSP2833x_GlobalVariableDefs.d" "DSP2833x_PieCtrl.d" "DSP2833x_PieVect.d" "DSP2833x_SysCtrl.d" "Example_2833xEPwmUpAQ.d" "epwm.d" 
+	-$(RM) "DSP2833x_ADC_cal.obj" "DSP2833x_CodeStartBranch.obj" "DSP2833x_CpuTimers.obj" "DSP2833x_DefaultIsr.obj" "DSP2833x_EPwm.obj" "DSP2833x_GlobalVariableDefs.obj" "DSP2833x_PieCtrl.obj" "DSP2833x_PieVect.obj" "DSP2833x_SysCtrl.obj" "DSP2833x_usDelay.obj" "Example_2833xEPwmUpAQ.obj" "Gpio.obj" "LED.obj" "epwm.obj" 
+	-$(RM) "DSP2833x_CpuTimers.d" "DSP2833x_DefaultIsr.d" "DSP2833x_EPwm.d" "DSP2833x_GlobalVariableDefs.d" "DSP2833x_PieCtrl.d" "DSP2833x_PieVect.d" "DSP2833x_SysCtrl.d" "Example_2833xEPwmUpAQ.d" "Gpio.d" "LED.d" "epwm.d" 
 	-$(RM) "DSP2833x_ADC_cal.d" "DSP2833x_CodeStartBranch.d" "DSP2833x_usDelay.d" 
 	-@echo ' '
 

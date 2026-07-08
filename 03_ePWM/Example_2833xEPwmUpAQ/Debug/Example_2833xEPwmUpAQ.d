@@ -28,6 +28,8 @@ Example_2833xEPwmUpAQ.obj: C:/ti/C2000Ware_26_01_00_00/device_support/f2833x/com
 Example_2833xEPwmUpAQ.obj: C:/ti/C2000Ware_26_01_00_00/device_support/f2833x/common/include/DSP2833x_I2c_defines.h
 Example_2833xEPwmUpAQ.obj: C:/ti/C2000Ware_26_01_00_00/device_support/f2833x/common/include/DSP2833x_DefaultIsr.h
 Example_2833xEPwmUpAQ.obj: ../epwm.h
+Example_2833xEPwmUpAQ.obj: ../Gpio.h
+Example_2833xEPwmUpAQ.obj: ../LED.h
 
 ../Example_2833xEPwmUpAQ.c:
 
@@ -84,4 +86,8 @@ C:/ti/C2000Ware_26_01_00_00/device_support/f2833x/common/include/DSP2833x_I2c_de
 C:/ti/C2000Ware_26_01_00_00/device_support/f2833x/common/include/DSP2833x_DefaultIsr.h:
 
 ../epwm.h:
+
+../Gpio.h:
+
+../LED.h:
 
