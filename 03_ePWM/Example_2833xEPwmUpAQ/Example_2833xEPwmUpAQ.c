@@ -159,7 +159,10 @@ void main(void)
 
     while (1) 
     {
-    
+        EPwm1Regs.CMPA.half.CMPA = 200;
+        DELAY_US(100);
+        EPwm1Regs.CMPA.half.CMPA = 800;
+        DELAY_US(100);
     }
 }
 

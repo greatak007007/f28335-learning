@@ -11,7 +11,7 @@ void InitEPwm1Simple(void)
     EPwm1Regs.TBCTL.bit.HSPCLKDIV = TB_DIV1;
     EPwm1Regs.TBCTL.bit.CLKDIV =TB_DIV1;
 
-    EPwm1Regs.CMPA.half.CMPA = 300;
+    EPwm1Regs.CMPA.half.CMPA = 500;
 
     //action
     EPwm1Regs.AQCTLA.bit.ZRO = AQ_SET;
