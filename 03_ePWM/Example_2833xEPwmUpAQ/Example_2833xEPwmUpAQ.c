@@ -145,13 +145,13 @@ void main(void)
     // For this case just init GPIO pins for ePWM1, ePWM2, ePWM3
     // These functions are in the DSP2833x_EPwm.c file
     //
-    InitEPwm1Gpio();
+    InitEPwm6Gpio();
 
     EALLOW;
     SysCtrlRegs.PCLKCR0.bit.TBCLKSYNC = 0;
     EDIS;
 
-    InitEPwm1Simple();
+    InitEPwm6Simple();
 
     EALLOW;
     SysCtrlRegs.PCLKCR0.bit.TBCLKSYNC = 1;
@@ -159,10 +159,7 @@ void main(void)
 
     while (1) 
     {
-        EPwm1Regs.CMPA.half.CMPA = 200;
-        DELAY_US(100);
-        EPwm1Regs.CMPA.half.CMPA = 800;
-        DELAY_US(100);
+        EPwm6Regs.CMPA.half.CMPA = 300;
     }
 }
 

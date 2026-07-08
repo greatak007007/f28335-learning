@@ -17,3 +17,19 @@ void InitEPwm1Simple(void)
     EPwm1Regs.AQCTLA.bit.ZRO = AQ_SET;
     EPwm1Regs.AQCTLA.bit.CAU = AQ_CLEAR;
 }
+void InitEPwm6Simple(void)
+{
+    EPwm6Regs.TBCTL.bit.CTRMODE = TB_COUNT_UP;
+    EPwm6Regs.TBPRD = 1000;
+    EPwm6Regs.TBCTR = 0;
+
+    //undivided frequency
+    EPwm6Regs.TBCTL.bit.HSPCLKDIV = TB_DIV1;
+    EPwm6Regs.TBCTL.bit.CLKDIV =TB_DIV1;
+
+    EPwm6Regs.CMPA.half.CMPA = 500;
+
+    //action
+    EPwm6Regs.AQCTLA.bit.ZRO = AQ_SET;
+    EPwm6Regs.AQCTLA.bit.CAU = AQ_CLEAR;
+}
