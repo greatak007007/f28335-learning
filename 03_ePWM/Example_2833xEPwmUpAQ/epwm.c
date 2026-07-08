@@ -11,6 +11,10 @@ void InitEPwm1Simple(void)
     EPwm1Regs.TBCTL.bit.HSPCLKDIV = TB_DIV1;
     EPwm1Regs.TBCTL.bit.CLKDIV =TB_DIV1;
 
+    //shawdow load on zero
+    EPwm1Regs.CMPCTL.bit.SHDWAMODE = CC_SHADOW;
+    EPwm1Regs.CMPCTL.bit.LOADAMODE = CC_CTR_ZERO;
+
     EPwm1Regs.CMPA.half.CMPA = 500;
 
     //action

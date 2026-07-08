@@ -129,7 +129,6 @@ EPWM_INFO epwm3_info;
 //
 void main(void)
 {
-    Uint16 cmp = 0, dir = 1;
     //
     // Step 1. Initialize System Control:
     // PLL, WatchDog, enable Peripheral Clocks
@@ -148,42 +147,26 @@ void main(void)
     // For this case just init GPIO pins for ePWM1, ePWM2, ePWM3
     // These functions are in the DSP2833x_EPwm.c file
     //
-    InitEPwm6Gpio();
+    InitEPwm1Gpio();
 
     EALLOW;
     SysCtrlRegs.PCLKCR0.bit.TBCLKSYNC = 0;
     EDIS;
 
-    InitEPwm6Simple();
+    InitEPwm1Simple();
 
     EALLOW;
     SysCtrlRegs.PCLKCR0.bit.TBCLKSYNC = 1;
     EDIS;
 
-    EPwm6Regs.TBPRD = 10000;
     while (1) 
     {
-        EPwm6Regs.CMPA.half.CMPA = cmp;
-        if(dir)
-        {
-            cmp++;
-            if(cmp >= EPwm6Regs.TBPRD)
-            {
-                dir = 0;
-            }
-        }
-        else
-        {
-            cmp--;
-            if (cmp == 0)
-            {
-                dir = 1;
-            }
-        }
-        DELAY_US(2000);
+        EPwm1Regs.CMPA.half.CMPA = 200;
+        DELAY_US(1000);
+        EPwm1Regs.CMPA.half.CMPA = 800;
+        DELAY_US(1000);
     }
 }
-
 // 
 // epwm1_isr - 
 //
