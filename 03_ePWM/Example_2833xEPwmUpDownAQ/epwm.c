@@ -12,15 +12,22 @@ void InitEPwm1Simple(void)
     EPwm1Regs.TBCTL.bit.CLKDIV =TB_DIV1;
 
     //shawdow load on zero
-    EPwm1Regs.CMPCTL.bit.SHDWAMODE = CC_IMMEDIATE;
+    EPwm1Regs.CMPCTL.bit.SHDWAMODE = CC_SHADOW;
+    EPwm1Regs.CMPCTL.bit.SHDWBMODE = CC_SHADOW;
     EPwm1Regs.CMPCTL.bit.LOADAMODE = CC_CTR_ZERO;
+    EPwm1Regs.CMPCTL.bit.LOADBMODE = CC_CTR_ZERO;
 
-    EPwm1Regs.CMPA.half.CMPA = 600;
+    EPwm1Regs.CMPA.half.CMPA = 300;
+    EPwm1Regs.CMPB = 300;
 
     //action
     EPwm1Regs.AQCTLA.bit.CAU = AQ_CLEAR;
     EPwm1Regs.AQCTLA.bit.CAD = AQ_SET;
+
+    EPwm1Regs.AQCTLB.bit.CAU = AQ_SET;
+    EPwm1Regs.AQCTLB.bit.CAD = AQ_CLEAR;
 }
+
 void InitEPwm6Simple(void)
 {
     EPwm6Regs.TBCTL.bit.CTRMODE = TB_COUNT_UP;
