@@ -60,6 +60,7 @@ void InitEPwm6Simple(void)
 
 void InitEPwm1Soc(void)
 {
+    EALLOW;
     //
     // ADC configuration
     //
@@ -77,5 +78,7 @@ void InitEPwm1Soc(void)
     EPwm1Regs.ETSEL.bit.SOCAEN = 1;
     EPwm1Regs.ETSEL.bit.SOCASEL = ET_CTRU_CMPA;
     EPwm1Regs.ETPS.bit.SOCAPRD = ET_1ST;
+
+    EDIS;
 }
 

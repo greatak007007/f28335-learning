@@ -139,8 +139,8 @@ __interrupt void
 adc_isr(void)
 {
     adc_value = AdcRegs.ADCRESULT0 >> 4;
-    AdcRegs.ADCTRL2.bit.RST_SEQ1 = 1;
     AdcRegs.ADCST.bit.INT_SEQ1_CLR = 1;
+    AdcRegs.ADCTRL2.bit.RST_SEQ1 = 1;
     PieCtrlRegs.PIEACK.all = PIEACK_GROUP1;
 
 }
