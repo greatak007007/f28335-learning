@@ -129,7 +129,6 @@ EPWM_INFO epwm3_info;
 //
 void main(void)
 {
-    Uint16 cmp = 100, i;
     //
     // Step 1. Initialize System Control:
     // PLL, WatchDog, enable Peripheral Clocks
