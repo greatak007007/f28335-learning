@@ -162,11 +162,7 @@ void main(void)
 
     while (1) 
     {
-        EPwm1Regs.CMPA.half.CMPA = cmp;
-        cmp++;
-        
-        if(cmp >= 900)
-            cmp = 100;
+        ;
     }
 }
 // 
