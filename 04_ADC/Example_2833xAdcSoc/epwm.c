@@ -58,27 +58,5 @@ void InitEPwm6Simple(void)
     EPwm6Regs.AQCTLA.bit.CAU = AQ_CLEAR;
 }
 
-void InitEPwm1Soc(void)
-{
-    EALLOW;
-    //
-    // ADC configuration
-    //
-    AdcRegs.ADCMAXCONV.all = 0;
-    AdcRegs.ADCCHSELSEQ1.bit.CONV00 = 0;
-    AdcRegs.ADCTRL2.bit.EPWM_SOCA_SEQ1 = 1;
-    AdcRegs.ADCTRL2.bit.INT_ENA_SEQ1 = 1;
 
-    //
-    // pwm configuration
-    //
-    EPwm1Regs.TBCTL.bit.CTRMODE = TB_COUNT_UP;
-    EPwm1Regs.TBPRD = 1000;
-    EPwm1Regs.CMPA.half.CMPA = 500;
-    EPwm1Regs.ETSEL.bit.SOCAEN = 1;
-    EPwm1Regs.ETSEL.bit.SOCASEL = ET_CTRU_CMPA;
-    EPwm1Regs.ETPS.bit.SOCAPRD = ET_1ST;
-
-    EDIS;
-}
 
