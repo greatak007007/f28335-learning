@@ -27,7 +27,8 @@ void InitAdcSoc(void)
     //----------------------------------
     // 1. ADC Clock
     //----------------------------------
-    AdcRegs.ADCTRL3.bit.ADCCLKPS = 4;
+    AdcRegs.ADCTRL3.bit.ADCCLKPS = 3;//adc clock = 12.5M
+    AdcRegs.ADCTRL1.bit.CPS = 0;
     //----------------------------------
     // 2. ADC Mode
     //----------------------------------
