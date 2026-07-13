@@ -28,6 +28,7 @@ Example_2833xAdcSoc.obj: C:/ti/C2000Ware_26_01_00_00/device_support/f2833x/commo
 Example_2833xAdcSoc.obj: C:/ti/C2000Ware_26_01_00_00/device_support/f2833x/common/include/DSP2833x_I2c_defines.h
 Example_2833xAdcSoc.obj: C:/ti/C2000Ware_26_01_00_00/device_support/f2833x/common/include/DSP2833x_DefaultIsr.h
 Example_2833xAdcSoc.obj: ../epwm.h
+Example_2833xAdcSoc.obj: ../Adc.h
 
 ../Example_2833xAdcSoc.c:
 
@@ -84,4 +85,6 @@ C:/ti/C2000Ware_26_01_00_00/device_support/f2833x/common/include/DSP2833x_I2c_de
 C:/ti/C2000Ware_26_01_00_00/device_support/f2833x/common/include/DSP2833x_DefaultIsr.h:
 
 ../epwm.h:
+
+../Adc.h:
 

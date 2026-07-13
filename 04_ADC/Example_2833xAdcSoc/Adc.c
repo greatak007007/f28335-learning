@@ -1,5 +1,7 @@
 #include "DSP28x_Project.h"     // Device Headerfile and Examples Include File
 
+volatile Uint16 adc_value = 0;
+
 void InitEPwm1Soc(void)
 {
     //---------------------------------------
@@ -32,20 +34,52 @@ void InitAdcSoc(void)
     //----------------------------------
     // 2. ADC Mode
     //----------------------------------
-
+    AdcRegs.ADCTRL1.bit.SEQ_CASC = 1;
+    AdcRegs.ADCTRL1.bit.CONT_RUN = 0;
+    AdcRegs.ADCTRL1.bit.SEQ_OVRD = 0;
     //----------------------------------
     // 3. Sample Window
     //----------------------------------
-
+    AdcRegs.ADCTRL1.bit.ACQ_PS = 6;
     //----------------------------------
     // 4. Sequencer
     //----------------------------------
-
+    AdcRegs.ADCMAXCONV.all = 0;
+    AdcRegs.ADCCHSELSEQ1.bit.CONV00 = 0;
     //----------------------------------
     // 5. Trigger Source
     //----------------------------------
-
+    AdcRegs.ADCTRL2.bit.EPWM_SOCA_SEQ1 = 1;
     //----------------------------------
     // 6. ADC Interrupt
     //----------------------------------
+    AdcRegs.ADCTRL2.bit.INT_MOD_SEQ1 = 0;
+    AdcRegs.ADCTRL2.bit.INT_ENA_SEQ1 = 1;
+
+    AdcRegs.ADCTRL2.bit.RST_SEQ1 = 1;
+    AdcRegs.ADCST.bit.INT_SEQ1_CLR = 1;
+}
+
+__interrupt void  adc_isr(void)
+{
+    //----------------------------------
+    // 1. Read ADC Result
+    //----------------------------------
+    adc_value = AdcRegs.ADCRESULT0 >> 4;
+    //----------------------------------
+    // 2. Process Data
+    //----------------------------------
+
+    //----------------------------------
+    // 3. Prepare Next Conversion
+    //----------------------------------
+    AdcRegs.ADCTRL2.bit.RST_SEQ1 = 1;
+    //----------------------------------
+    // 4. Clear ADC Interrupt Flag
+    //----------------------------------
+    AdcRegs.ADCST.bit.INT_SEQ1_CLR = 1;
+    //----------------------------------
+    // 5. Acknowledge PIE
+    //----------------------------------    
+    PieCtrlRegs.PIEACK.all = PIEACK_GROUP1;
 }
