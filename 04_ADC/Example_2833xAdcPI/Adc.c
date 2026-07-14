@@ -1,8 +1,10 @@
 #include "DSP28x_Project.h"     // Device Headerfile and Examples Include File
 #include "Adc.h"
+#include "control.h"
+#include "epwm.h"
+#include "general.h"
 
-volatile Uint16 adc_vin = 0, adc_vout = 0, adc_iout = 0;
-
+static volatile Uint16 adc_vin = 0, adc_vout = 0, adc_iout = 0;
 
 void InitEPwm1Soc(void)
 {
@@ -15,7 +17,16 @@ void InitEPwm1Soc(void)
 
     EPwm1Regs.TBCTL.bit.HSPCLKDIV = TB_DIV1;
     EPwm1Regs.TBCTL.bit.CLKDIV = TB_DIV1;
-
+    //---------------------------------------
+    //compare
+    //---------------------------------------
+    EPwm1Regs.CMPCTL.bit.SHDWAMODE = CC_SHADOW;
+    EPwm1Regs.CMPCTL.bit.LOADAMODE = CC_CTR_ZERO;
+    //---------------------------------------
+    //action-qualifier
+    //---------------------------------------
+    EPwm1Regs.AQCTLA.bit.ZRO = AQ_SET;
+    EPwm1Regs.AQCTLA.bit.CAU = AQ_CLEAR;
     //---------------------------------------
     //event-trigger
     //---------------------------------------
@@ -66,15 +77,30 @@ void InitAdcSoc(void)
 
 __interrupt void  adc_isr(void)
 {
+    Uint16 cmpa;
+    static float vin, iout, error;
+    float vout_pin, vout;
     //----------------------------------
-    // 1. Read ADC Result
+    // 1. Read ADC 
     //----------------------------------
-    adc_vout = AdcRegs.ADCRESULT0 >> 4;
-    adc_iout = AdcRegs.ADCRESULT1 >> 4;
-    adc_vin = AdcRegs.ADCRESULT2 >> 4;
-    //----------------------------------
-    // 2. Process Data
-    //----------------------------------
+    ADC_Read();
+    //-----------------------
+    // Calculate Error
+    //-----------------------
+    vout_pin = AdcToVol(adc_vout);
+    vout = VoltageScale(vout_pin, R_UP, R_DOWN);
+    error = VREF - vout;
+    //-----------------------
+    // Incremental PI
+    //-----------------------
+    cmpa = (Uint16) PI_Cal(error);
+    //-----------------------
+    // Update PWM
+    //-----------------------
+    UpdatePWM(cmpa);
+    //-----------------------
+    // Save History
+    //-----------------------
 
     //----------------------------------
     // 3. Prepare Next Conversion
@@ -88,4 +114,21 @@ __interrupt void  adc_isr(void)
     // 5. Acknowledge PIE
     //----------------------------------    
     PieCtrlRegs.PIEACK.all = PIEACK_GROUP1;
+
+}
+
+float AdcToVol(Uint16 adc_value)
+{
+    return (float) adc_value / ADC_MAX * 3.0f ;
+}
+float VoltageScale(float vout_pin, float r_up, float r_down)
+{
+    return vout_pin * (1 + r_up / r_down);
+}
+
+void ADC_Read(void)
+{
+    adc_vout = AdcRegs.ADCRESULT0 >> 4;
+    adc_iout = AdcRegs.ADCRESULT1 >> 4;
+    adc_vin = AdcRegs.ADCRESULT2 >> 4;
 }

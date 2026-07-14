@@ -28,6 +28,9 @@ Adc.obj: C:/ti/C2000Ware_26_01_00_00/device_support/f2833x/common/include/DSP283
 Adc.obj: C:/ti/C2000Ware_26_01_00_00/device_support/f2833x/common/include/DSP2833x_I2c_defines.h
 Adc.obj: C:/ti/C2000Ware_26_01_00_00/device_support/f2833x/common/include/DSP2833x_DefaultIsr.h
 Adc.obj: ../Adc.h
+Adc.obj: ../control.h
+Adc.obj: ../epwm.h
+Adc.obj: ../general.h
 
 ../Adc.c:
 
@@ -84,4 +87,10 @@ C:/ti/C2000Ware_26_01_00_00/device_support/f2833x/common/include/DSP2833x_I2c_de
 C:/ti/C2000Ware_26_01_00_00/device_support/f2833x/common/include/DSP2833x_DefaultIsr.h:
 
 ../Adc.h:
+
+../control.h:
+
+../epwm.h:
+
+../general.h:
 
