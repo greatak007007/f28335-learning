@@ -80,11 +80,11 @@ __interrupt void  adc_isr(void)
     //----------------------------------
     // 1. Read ADC 
     //----------------------------------
-    ADC_Read();
+    ADCResultRead(&ADC_Result);
     //-----------------------
     // Calculate Error
     //-----------------------
-    Feedback.vout = VoutScale(ADC_Result.vout);
+    VoutScale(&Feedback);
     //-----------------------
     // Incremental PI
     //-----------------------
@@ -112,20 +112,20 @@ float AdcToVoltage(Uint16 adc_value)
 {
     return (float) adc_value / ADC_MAX * 3.0f ;
 }
-float VoutScale(Uint16 adc_value)
+void VoutScale(Feedback_TypeDef *feedback)
 {
     float adc_voltage;
 
-    adc_voltage = AdcToVoltage(adc_value);
+    adc_voltage = AdcToVoltage(ADC_Result.vout);
+    feedback->voltage.vout = adc_voltage * (1 + R_UP / R_DOWN);
 
-    return adc_voltage * (1 + R_UP / R_DOWN);
 }
 
-void ADC_Read(void)
+void ADCResultRead(ADC_ResultTypeDef *AdcResult)
 {
-    ADC_Result.vout = AdcRegs.ADCRESULT0 >> 4;
-    ADC_Result.iout = AdcRegs.ADCRESULT1 >> 4;
-    ADC_Result.vin = AdcRegs.ADCRESULT2 >> 4;
+    AdcResult->vout = AdcRegs.ADCRESULT0 >> 4;
+    AdcResult->iout = AdcRegs.ADCRESULT1 >> 4;
+    AdcResult->vin = AdcRegs.ADCRESULT2 >> 4;
 }
 
 

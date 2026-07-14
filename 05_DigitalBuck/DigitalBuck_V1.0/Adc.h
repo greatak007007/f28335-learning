@@ -36,6 +36,7 @@ typedef struct
 
 }ADC_ResultTypeDef;
 
+
 extern Feedback_TypeDef Feedback;
 
 
@@ -43,8 +44,9 @@ void InitEPwm1Soc(void);
 void InitAdcSoc(void);
 __interrupt void  adc_isr(void);
 float AdcToVoltage(Uint16 adc_value);
-float VoutScale(Uint16 adc_value);
-void ADC_Read(void);
+void VoutScale(Feedback_TypeDef *feedback);
+void ADCResultRead(ADC_ResultTypeDef *AdcResult);
+
 
 
 
