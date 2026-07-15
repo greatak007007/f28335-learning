@@ -1,3 +1,8 @@
+#ifndef EPWM_H
+#define EPWM_H
 void InitEPwm1Simple(void);
 void InitEPwm6Simple(void);
-void UpdatePWM(Uint16 cmpa);
+
+// 原来的所有内容
+
+#endif

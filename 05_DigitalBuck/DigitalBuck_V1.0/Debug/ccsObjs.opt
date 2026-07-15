@@ -10,6 +10,7 @@
 "./DSP2833x_PieVect.obj"
 "./DSP2833x_SysCtrl.obj"
 "./DSP2833x_usDelay.obj"
+"./Protection.obj"
 "./control.obj"
 "./epwm.obj"
 "./global.obj"

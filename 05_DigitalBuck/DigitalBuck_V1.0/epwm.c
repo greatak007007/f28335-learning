@@ -58,9 +58,6 @@ void InitEPwm6Simple(void)
     EPwm6Regs.AQCTLA.bit.CAU = AQ_CLEAR;
 }
 
-void UpdatePWM(Uint16 duty)
-{
-    EPwm1Regs.CMPA.half.CMPA = duty;
-}
+
 
 

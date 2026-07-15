@@ -30,6 +30,7 @@ control.obj: C:/ti/C2000Ware_26_01_00_00/device_support/f2833x/common/include/DS
 control.obj: ../control.h
 control.obj: ../Adc.h
 control.obj: ../epwm.h
+control.obj: ../global.h
 
 ../control.c:
 
@@ -90,4 +91,6 @@ C:/ti/C2000Ware_26_01_00_00/device_support/f2833x/common/include/DSP2833x_Defaul
 ../Adc.h:
 
 ../epwm.h:
+
+../global.h:
 

@@ -22,6 +22,7 @@ ORDERED_OBJS += \
 "./DSP2833x_PieVect.obj" \
 "./DSP2833x_SysCtrl.obj" \
 "./DSP2833x_usDelay.obj" \
+"./Protection.obj" \
 "./control.obj" \
 "./epwm.obj" \
 "./global.obj" \
@@ -149,8 +150,8 @@ Example_2833xAdcSoc.out: $(OBJS) $(CMD_SRCS) $(GEN_CMDS)
 # Other Targets
 clean:
 	-$(RM) $(EXE_OUTPUTS__QUOTED)
-	-$(RM) "Adc.obj" "DSP2833x_ADC_cal.obj" "DSP2833x_Adc.obj" "DSP2833x_CodeStartBranch.obj" "DSP2833x_DefaultIsr.obj" "DSP2833x_GlobalVariableDefs.obj" "DSP2833x_PieCtrl.obj" "DSP2833x_PieVect.obj" "DSP2833x_SysCtrl.obj" "DSP2833x_usDelay.obj" "control.obj" "epwm.obj" "global.obj" "main.obj" 
-	-$(RM) "Adc.d" "DSP2833x_Adc.d" "DSP2833x_DefaultIsr.d" "DSP2833x_GlobalVariableDefs.d" "DSP2833x_PieCtrl.d" "DSP2833x_PieVect.d" "DSP2833x_SysCtrl.d" "control.d" "epwm.d" "global.d" "main.d" 
+	-$(RM) "Adc.obj" "DSP2833x_ADC_cal.obj" "DSP2833x_Adc.obj" "DSP2833x_CodeStartBranch.obj" "DSP2833x_DefaultIsr.obj" "DSP2833x_GlobalVariableDefs.obj" "DSP2833x_PieCtrl.obj" "DSP2833x_PieVect.obj" "DSP2833x_SysCtrl.obj" "DSP2833x_usDelay.obj" "Protection.obj" "control.obj" "epwm.obj" "global.obj" "main.obj" 
+	-$(RM) "Adc.d" "DSP2833x_Adc.d" "DSP2833x_DefaultIsr.d" "DSP2833x_GlobalVariableDefs.d" "DSP2833x_PieCtrl.d" "DSP2833x_PieVect.d" "DSP2833x_SysCtrl.d" "Protection.d" "control.d" "epwm.d" "global.d" "main.d" 
 	-$(RM) "DSP2833x_ADC_cal.d" "DSP2833x_CodeStartBranch.d" "DSP2833x_usDelay.d" 
 	-@echo ' '
 

@@ -47,7 +47,6 @@ void main(void)
     ERTM;
     
     //open adc interrupt
-    PI_Init();
     while (1) 
     {
     

@@ -2,9 +2,13 @@
 #include "Adc.h"
 #include "control.h"
 #include "epwm.h"
+#include "global.h"
+#include "Protection.h"
 
 static ADC_ResultTypeDef ADC_Result;
 Feedback_TypeDef Feedback;
+
+
 
 void InitEPwm1Soc(void)
 {
@@ -82,17 +86,17 @@ __interrupt void  adc_isr(void)
     //----------------------------------
     ADCResultRead(&ADC_Result);
     //-----------------------
-    // Calculate Error
+    // 2. ADC value convert to sample voltage
     //-----------------------
-    VoutScale(&Feedback);
+    FeedbackRun(&Feedback, &ADC_Result);
     //-----------------------
-    // Incremental PI
+    // 3. Protection
     //-----------------------
-    Control_Run();
+    Protection_Run(&Feedback, &Buck);
     //-----------------------
-    // Save History
+    // 4. State Machine
     //-----------------------
-
+    StateMachine_Run();
     //----------------------------------
     // 3. Prepare Next Conversion
     //----------------------------------
@@ -112,14 +116,6 @@ float AdcToVoltage(Uint16 adc_value)
 {
     return (float) adc_value / ADC_MAX * 3.0f ;
 }
-void VoutScale(Feedback_TypeDef *feedback)
-{
-    float adc_voltage;
-
-    adc_voltage = AdcToVoltage(ADC_Result.vout);
-    feedback->voltage.vout = adc_voltage * (1 + R_UP / R_DOWN);
-
-}
 
 void ADCResultRead(ADC_ResultTypeDef *AdcResult)
 {
@@ -127,5 +123,12 @@ void ADCResultRead(ADC_ResultTypeDef *AdcResult)
     AdcResult->iout = AdcRegs.ADCRESULT1 >> 4;
     AdcResult->vin = AdcRegs.ADCRESULT2 >> 4;
 }
+
+void FeedbackRun(Feedback_TypeDef *feedback, ADC_ResultTypeDef *adc_result)
+{
+    //vout
+    feedback->voltage.vout = AdcToVoltage(adc_result->vout) * (1 + R_UP / R_DOWN);
+}
+
 
 

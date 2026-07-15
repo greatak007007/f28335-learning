@@ -30,6 +30,8 @@ Adc.obj: C:/ti/C2000Ware_26_01_00_00/device_support/f2833x/common/include/DSP283
 Adc.obj: ../Adc.h
 Adc.obj: ../control.h
 Adc.obj: ../epwm.h
+Adc.obj: ../global.h
+Adc.obj: ../Protection.h
 
 ../Adc.c:
 
@@ -90,4 +92,8 @@ C:/ti/C2000Ware_26_01_00_00/device_support/f2833x/common/include/DSP2833x_Defaul
 ../control.h:
 
 ../epwm.h:
+
+../global.h:
+
+../Protection.h:
 
