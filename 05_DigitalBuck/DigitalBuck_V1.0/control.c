@@ -1,12 +1,8 @@
-#include "DSP28x_Project.h"     // Device Headerfile and Examples Include File
 #include "control.h"
-#include "Adc.h"
-#include "epwm.h"
 #include "global.h"
 
-static PI_TypeDef VoltageLoop;
-Buck_Typedef Buck;
-static Bool_e softstart_finished;
+PI_TypeDef VoltageLoop;
+static Uint16 softstart_finished;
 static SoftStartType softstart;
 
 void StateMachine_Run(void)
@@ -14,7 +10,6 @@ void StateMachine_Run(void)
     switch (Buck.state) 
     {
         case INIT:
-            PI_Init(&VoltageLoop);
             Buck.duty = 0;
             Buck.fault_flag.all = 0x0;
             Buck.state = WAIT_ENABLE;
@@ -28,14 +23,14 @@ void StateMachine_Run(void)
             break;
         case SOFTSTART:
             softstart_finished = SoftStart_Run();
-            Control_Run();
+            Control_Run(&VoltageLoop, &Feedback, &Buck);
             if(softstart_finished)
             {
                 Buck.state = RUN;
             }
             break;
         case RUN:
-            Control_Run();
+            Control_Run(&VoltageLoop, &Feedback, &Buck);
             if(Buck.fault_flag.all != 0)
                 Buck.state = FAULT;
             break;
@@ -47,35 +42,57 @@ void StateMachine_Run(void)
     }
 }
 
-void Control_Run(void)
+void Control_Run(PI_TypeDef *voltageloop, Feedback_TypeDef *feedback, Buck_Typedef *buck)
 {
 
-    VoltageLoop.state.feedback = Feedback.voltage.vout;
-    VoltageLoop.state.error = VoltageLoop.state.Controlref - VoltageLoop.state.feedback;
+    voltageloop->state.feedback = feedback->voltage.vout;
+    voltageloop->state.error = voltageloop->state.Controlref - voltageloop->state.feedback;
 
-    PI_Run(&VoltageLoop);
+    PI_Run(voltageloop, buck);
 
-    Buck.request_duty = VoltageLoop.state.output_unlimit;
-    DutyLimit(&Buck);
+    buck->request_duty = voltageloop->state.output_unlimit;
+    buck->duty = buck->request_duty;
+    DutyLimit(buck);
     //-----------------------
     // Update PWM
     //-----------------------
-    UpdatePWM(Buck.duty);
+    UpdatePWM(buck);
 }
 
 void PI_Run(PI_TypeDef * pi)
 {
-    float delta_cmpa;
+    float proportional_delta, integral_delta;
+    float predict_duty;
+    Uint16 allow_integral;
 
     if(pi->state.is_initialized == BOOL_NO)
     {
         pi->state.is_initialized = BOOL_YES;
         pi->state.error_last = pi->state.error;
     }
-    
-    delta_cmpa = pi->param.kp * (pi->state.error - pi->state.error_last) + pi->param.ki * pi->state.error;
 
-    pi->state.output_unlimit += delta_cmpa;
+    proportional_delta = pi->param.kp * (pi->state.error - pi->state.error_last);
+    integral_delta = pi->param.ki * pi->state.error;
+
+    predict_duty = pi->state.output_unlimit;
+
+    predict_duty += (proportional_delta + integral_delta);
+
+    // judge integral saturation
+    if((predict_duty >= DUTY_MAX && pi->state.error > 0) ||
+       (predict_duty <= DUTY_MIN && pi->state.error < 0) )
+    {
+        allow_integral = BOOL_NO;
+    }
+    else 
+        allow_integral = BOOL_YES;
+
+    if(allow_integral)
+    {
+        pi->state.output_unlimit += (proportional_delta + integral_delta);
+    }
+    else 
+        pi->state.output_unlimit += proportional_delta;    
 
     pi->state.error_last = pi->state.error;
 
@@ -88,7 +105,7 @@ void PI_Init(PI_TypeDef *pi)
     pi->param.TargetRef = 1.5;
 
     pi->state.output_unlimit = 500;
-    pi->state.Controlref = 0;
+    pi->state.Controlref = 1.5;
     pi->state.is_initialized = BOOL_NO;
 }
 
@@ -100,11 +117,11 @@ void DutyLimit(Buck_Typedef *buck)
     if (buck->request_duty < 0)
         buck->duty = 0;
 }
-void UpdatePWM(float duty)
+void UpdatePWM(Buck_Typedef *buck)
 {
-    EPwm1Regs.CMPA.half.CMPA = (Uint16) duty;
+    EPwm1Regs.CMPA.half.CMPA = (Uint16) buck->duty;
 }
-Bool_e SoftStart_Run(void)
+Uint16 SoftStart_Run(void)
 {
     float step_num;
 

@@ -1,45 +1,10 @@
-#include "DSP28x_Project.h"     // Device Headerfile and Examples Include File
 #include "Adc.h"
 #include "control.h"
-#include "epwm.h"
-#include "global.h"
-#include "Protection.h"
 
 static ADC_ResultTypeDef ADC_Result;
 Feedback_TypeDef Feedback;
 
 
-
-void InitEPwm1Soc(void)
-{
-    //---------------------------------------
-    //time-base
-    //---------------------------------------
-    EPwm1Regs.TBCTL.bit.CTRMODE = TB_COUNT_UP;
-    EPwm1Regs.TBPRD = 1000;
-    EPwm1Regs.TBCTR = 0;
-
-    EPwm1Regs.TBCTL.bit.HSPCLKDIV = TB_DIV1;
-    EPwm1Regs.TBCTL.bit.CLKDIV = TB_DIV1;
-    //---------------------------------------
-    //compare
-    //---------------------------------------
-    EPwm1Regs.CMPCTL.bit.SHDWAMODE = CC_SHADOW;
-    EPwm1Regs.CMPCTL.bit.LOADAMODE = CC_CTR_ZERO;
-    //---------------------------------------
-    //action-qualifier
-    //---------------------------------------
-    EPwm1Regs.AQCTLA.bit.ZRO = AQ_SET;
-    EPwm1Regs.AQCTLA.bit.CAU = AQ_CLEAR;
-    //---------------------------------------
-    //event-trigger
-    //---------------------------------------
-    EPwm1Regs.ETSEL.bit.SOCAEN = 1;
-    EPwm1Regs.ETSEL.bit.SOCASEL = ET_CTR_ZERO;
-    EPwm1Regs.ETPS.bit.SOCAPRD = ET_1ST;
-    EPwm1Regs.ETCLR.bit.SOCA = 1;
-
-}
 
 void InitAdcSoc(void)
 {
@@ -92,7 +57,7 @@ __interrupt void  adc_isr(void)
     //-----------------------
     // 3. Protection
     //-----------------------
-    Protection_Run(&Feedback, &Buck);
+    //Protection_Run(&Feedback, &Buck, &protection);
     //-----------------------
     // 4. State Machine
     //-----------------------

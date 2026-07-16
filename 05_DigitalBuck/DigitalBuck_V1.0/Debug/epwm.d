@@ -27,6 +27,7 @@ epwm.obj: C:/ti/C2000Ware_26_01_00_00/device_support/f2833x/common/include/DSP28
 epwm.obj: C:/ti/C2000Ware_26_01_00_00/device_support/f2833x/common/include/DSP2833x_Dma_defines.h
 epwm.obj: C:/ti/C2000Ware_26_01_00_00/device_support/f2833x/common/include/DSP2833x_I2c_defines.h
 epwm.obj: C:/ti/C2000Ware_26_01_00_00/device_support/f2833x/common/include/DSP2833x_DefaultIsr.h
+epwm.obj: ../epwm.h
 
 ../epwm.c:
 
@@ -81,4 +82,6 @@ C:/ti/C2000Ware_26_01_00_00/device_support/f2833x/common/include/DSP2833x_Dma_de
 C:/ti/C2000Ware_26_01_00_00/device_support/f2833x/common/include/DSP2833x_I2c_defines.h:
 
 C:/ti/C2000Ware_26_01_00_00/device_support/f2833x/common/include/DSP2833x_DefaultIsr.h:
+
+../epwm.h:
 

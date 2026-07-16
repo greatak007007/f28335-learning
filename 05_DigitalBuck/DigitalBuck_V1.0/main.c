@@ -2,7 +2,8 @@
 #include "epwm.h"
 #include "Adc.h"
 #include "control.h"
-
+#include "Protection.h"
+#include "buck.h"
 //
 // Globals
 //
@@ -47,6 +48,10 @@ void main(void)
     ERTM;
     
     //open adc interrupt
+    Buck_Init(&Buck);
+    PI_Init(&VoltageLoop);
+
+    //Protection_Init(&protection);
     while (1) 
     {
     

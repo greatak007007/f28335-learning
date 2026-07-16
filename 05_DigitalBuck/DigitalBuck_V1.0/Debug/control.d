@@ -1,6 +1,7 @@
 # FIXED
 
 control.obj: ../control.c
+control.obj: ../control.h
 control.obj: C:/ti/C2000Ware_26_01_00_00/device_support/f2833x/common/include/DSP28x_Project.h
 control.obj: C:/ti/C2000Ware_26_01_00_00/device_support/f2833x/headers/include/DSP2833x_Device.h
 control.obj: C:/ti/C2000Ware_26_01_00_00/device_support/f2833x/headers/include/DSP2833x_Adc.h
@@ -27,12 +28,14 @@ control.obj: C:/ti/C2000Ware_26_01_00_00/device_support/f2833x/common/include/DS
 control.obj: C:/ti/C2000Ware_26_01_00_00/device_support/f2833x/common/include/DSP2833x_Dma_defines.h
 control.obj: C:/ti/C2000Ware_26_01_00_00/device_support/f2833x/common/include/DSP2833x_I2c_defines.h
 control.obj: C:/ti/C2000Ware_26_01_00_00/device_support/f2833x/common/include/DSP2833x_DefaultIsr.h
-control.obj: ../control.h
+control.obj: ../buck.h
 control.obj: ../Adc.h
-control.obj: ../epwm.h
 control.obj: ../global.h
+control.obj: ../epwm.h
 
 ../control.c:
+
+../control.h:
 
 C:/ti/C2000Ware_26_01_00_00/device_support/f2833x/common/include/DSP28x_Project.h:
 
@@ -86,11 +89,11 @@ C:/ti/C2000Ware_26_01_00_00/device_support/f2833x/common/include/DSP2833x_I2c_de
 
 C:/ti/C2000Ware_26_01_00_00/device_support/f2833x/common/include/DSP2833x_DefaultIsr.h:
 
-../control.h:
+../buck.h:
 
 ../Adc.h:
 
-../epwm.h:
-
 ../global.h:
+
+../epwm.h:
 

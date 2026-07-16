@@ -1,8 +1,8 @@
 # FIXED
 
 Protection.obj: ../Protection.c
+Protection.obj: ../Protection.h
 Protection.obj: ../Adc.h
-Protection.obj: ../control.h
 Protection.obj: C:/ti/C2000Ware_26_01_00_00/device_support/f2833x/common/include/DSP28x_Project.h
 Protection.obj: C:/ti/C2000Ware_26_01_00_00/device_support/f2833x/headers/include/DSP2833x_Device.h
 Protection.obj: C:/ti/C2000Ware_26_01_00_00/device_support/f2833x/headers/include/DSP2833x_Adc.h
@@ -29,13 +29,15 @@ Protection.obj: C:/ti/C2000Ware_26_01_00_00/device_support/f2833x/common/include
 Protection.obj: C:/ti/C2000Ware_26_01_00_00/device_support/f2833x/common/include/DSP2833x_Dma_defines.h
 Protection.obj: C:/ti/C2000Ware_26_01_00_00/device_support/f2833x/common/include/DSP2833x_I2c_defines.h
 Protection.obj: C:/ti/C2000Ware_26_01_00_00/device_support/f2833x/common/include/DSP2833x_DefaultIsr.h
-Protection.obj: ../Protection.h
+Protection.obj: ../global.h
+Protection.obj: ../buck.h
+Protection.obj: ../epwm.h
 
 ../Protection.c:
 
-../Adc.h:
+../Protection.h:
 
-../control.h:
+../Adc.h:
 
 C:/ti/C2000Ware_26_01_00_00/device_support/f2833x/common/include/DSP28x_Project.h:
 
@@ -89,5 +91,9 @@ C:/ti/C2000Ware_26_01_00_00/device_support/f2833x/common/include/DSP2833x_I2c_de
 
 C:/ti/C2000Ware_26_01_00_00/device_support/f2833x/common/include/DSP2833x_DefaultIsr.h:
 
-../Protection.h:
+../global.h:
+
+../buck.h:
+
+../epwm.h:
 

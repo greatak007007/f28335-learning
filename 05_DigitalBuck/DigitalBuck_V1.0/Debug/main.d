@@ -29,7 +29,10 @@ main.obj: C:/ti/C2000Ware_26_01_00_00/device_support/f2833x/common/include/DSP28
 main.obj: C:/ti/C2000Ware_26_01_00_00/device_support/f2833x/common/include/DSP2833x_DefaultIsr.h
 main.obj: ../epwm.h
 main.obj: ../Adc.h
+main.obj: ../global.h
+main.obj: ../buck.h
 main.obj: ../control.h
+main.obj: ../Protection.h
 
 ../main.c:
 
@@ -89,5 +92,11 @@ C:/ti/C2000Ware_26_01_00_00/device_support/f2833x/common/include/DSP2833x_Defaul
 
 ../Adc.h:
 
+../global.h:
+
+../buck.h:
+
 ../control.h:
+
+../Protection.h:
 

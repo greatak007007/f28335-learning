@@ -1,5 +1,6 @@
 #include "DSP28x_Project.h"     // Device Headerfile and Examples Include File
 #include "DSP2833x_EPwm_defines.h"
+#include "epwm.h"
 
 void InitEPwm1Simple(void)
 {
@@ -58,6 +59,36 @@ void InitEPwm6Simple(void)
     EPwm6Regs.AQCTLA.bit.CAU = AQ_CLEAR;
 }
 
+void InitEPwm1Soc(void)
+{
+    //---------------------------------------
+    //time-base
+    //---------------------------------------
+    EPwm1Regs.TBCTL.bit.CTRMODE = TB_COUNT_UPDOWN;
+    EPwm1Regs.TBPRD = TB_PERIOD;
+    EPwm1Regs.TBCTR = 0;
+
+    EPwm1Regs.TBCTL.bit.HSPCLKDIV = TB_DIV1;
+    EPwm1Regs.TBCTL.bit.CLKDIV = TB_DIV1;
+    //---------------------------------------
+    //compare
+    //---------------------------------------
+    EPwm1Regs.CMPCTL.bit.SHDWAMODE = CC_SHADOW;
+    EPwm1Regs.CMPCTL.bit.LOADAMODE = CC_CTR_ZERO;
+    //---------------------------------------
+    //action-qualifier
+    //---------------------------------------
+    EPwm1Regs.AQCTLA.bit.CAU = AQ_CLEAR;
+    EPwm1Regs.AQCTLA.bit.CAD = AQ_SET;
+    //---------------------------------------
+    //event-trigger
+    //---------------------------------------
+    EPwm1Regs.ETSEL.bit.SOCAEN = 1;
+    EPwm1Regs.ETSEL.bit.SOCASEL = ET_CTR_ZERO;
+    EPwm1Regs.ETPS.bit.SOCAPRD = ET_1ST;
+    EPwm1Regs.ETCLR.bit.SOCA = 1;
+
+}
 
 
 

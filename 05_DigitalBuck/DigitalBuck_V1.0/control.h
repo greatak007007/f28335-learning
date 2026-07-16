@@ -3,13 +3,12 @@
 
 // 原来的所有内容
 #include "DSP28x_Project.h"
+#include "buck.h"
+#include "Adc.h"
+#include "epwm.h"
+#include "global.h"
 
-//Buck State macro
-typedef enum 
-{
-    BOOL_NO = 0,
-    BOOL_YES = 1
-}Bool_e;
+
 
 typedef struct 
 {
@@ -67,55 +66,16 @@ typedef struct
 
 }PI_TypeDef;
 
-typedef enum
-{
-    INIT,
-    WAIT_ENABLE,
-    SOFTSTART,
-    RUN,
-    FAULT
-
-}BuckState_e;
-
-struct BuckFaultFlag_BITS // bits   description
-{
-    Uint16 OUT_OVP:1;       // 0      output OVP
-    Uint16 OUT_OCP:1;       // 1      output OCP
-    Uint16 IN_OVP:1;        // 2      input OVP
-    Uint16 IN_OCP:1;        // 3      input OCP
-
-};
-
-typedef union 
-{
-    Uint16                    all;
-    struct BuckFaultFlag_BITS bit;
-
-}BuckFaultFlag_t;
-
-typedef struct 
-{
-    float duty;
-    float request_duty;
-
-    BuckState_e state;
-    BuckFaultFlag_t fault_flag;
-
-    Uint16 enable;
-
-}Buck_Typedef;
-
-extern Buck_Typedef Buck;
+extern PI_TypeDef VoltageLoop;
 
 void PI_Run(PI_TypeDef * pi);
 void PI_Init(PI_TypeDef *pi);
 void DutyLimit(Buck_Typedef *buck);
-void Control_Run(void);
-void UpdatePWM(float duty);
+void Control_Run(PI_TypeDef *voltageloop, Feedback_TypeDef *feedback, Buck_Typedef *buck);
+void UpdatePWM(Buck_Typedef *buck);
 void StateMachine_Run(void);
-Bool_e SoftStart_Run(void);
+Uint16 SoftStart_Run(void);
 void SoftStart_Init(SoftStartType *softstart);
-
 #endif
 
 

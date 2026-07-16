@@ -23,6 +23,7 @@ C:/ti/C2000Ware_26_01_00_00/device_support/f2833x/common/source/DSP2833x_PieCtrl
 C:/ti/C2000Ware_26_01_00_00/device_support/f2833x/common/source/DSP2833x_PieVect.c \
 C:/ti/C2000Ware_26_01_00_00/device_support/f2833x/common/source/DSP2833x_SysCtrl.c \
 ../Protection.c \
+../buck.c \
 ../control.c \
 ../epwm.c \
 ../global.c \
@@ -37,6 +38,7 @@ C_DEPS += \
 ./DSP2833x_PieVect.d \
 ./DSP2833x_SysCtrl.d \
 ./Protection.d \
+./buck.d \
 ./control.d \
 ./epwm.d \
 ./global.d \
@@ -54,6 +56,7 @@ OBJS += \
 ./DSP2833x_SysCtrl.obj \
 ./DSP2833x_usDelay.obj \
 ./Protection.obj \
+./buck.obj \
 ./control.obj \
 ./epwm.obj \
 ./global.obj \
@@ -76,6 +79,7 @@ OBJS__QUOTED += \
 "DSP2833x_SysCtrl.obj" \
 "DSP2833x_usDelay.obj" \
 "Protection.obj" \
+"buck.obj" \
 "control.obj" \
 "epwm.obj" \
 "global.obj" \
@@ -90,6 +94,7 @@ C_DEPS__QUOTED += \
 "DSP2833x_PieVect.d" \
 "DSP2833x_SysCtrl.d" \
 "Protection.d" \
+"buck.d" \
 "control.d" \
 "epwm.d" \
 "global.d" \
@@ -109,6 +114,7 @@ C_SRCS__QUOTED += \
 "C:/ti/C2000Ware_26_01_00_00/device_support/f2833x/common/source/DSP2833x_PieVect.c" \
 "C:/ti/C2000Ware_26_01_00_00/device_support/f2833x/common/source/DSP2833x_SysCtrl.c" \
 "../Protection.c" \
+"../buck.c" \
 "../control.c" \
 "../epwm.c" \
 "../global.c" \
