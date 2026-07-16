@@ -48,7 +48,7 @@ void Control_Run(PI_TypeDef *voltageloop, Feedback_TypeDef *feedback, Buck_Typed
     voltageloop->state.feedback = feedback->voltage.vout;
     voltageloop->state.error = voltageloop->state.Controlref - voltageloop->state.feedback;
 
-    PI_Run(voltageloop, buck);
+    PI_Run(voltageloop);
 
     buck->request_duty = voltageloop->state.output_unlimit;
     buck->duty = buck->request_duty;
@@ -104,7 +104,7 @@ void PI_Init(PI_TypeDef *pi)
     pi->param.ki = 1;
     pi->param.TargetRef = 1.5;
 
-    pi->state.output_unlimit = 500;
+    pi->state.output_unlimit = 0;
     pi->state.Controlref = 1.5;
     pi->state.is_initialized = BOOL_NO;
 }
